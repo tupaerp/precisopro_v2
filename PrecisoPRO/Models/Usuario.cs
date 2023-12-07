@@ -46,8 +46,8 @@ namespace PrecisoPRO.Models
         public Empresa? Empresa { get; set; }
 
 
-        [Display(Name = "Imagem")]
-        public string? Imagem { get; set; }
+        //[Display(Name = "Imagem")]
+        //public string? Imagem { get; set; }
 
 
 
