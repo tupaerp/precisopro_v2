@@ -1,10 +1,8 @@
-﻿@using PrecisoPRO.Models.ViewModels
-@model CndUfViewModel
+﻿@model PrecisoPRO.Models.Empresa
 @{
-    ViewData["Title"] = "AssociarEmpresa";
+    ViewData["Title"] = "AssociarIndividual";
     Layout = "~/Views/Shared/_LayoutModais.cshtml";
 }
-
 
 <div class="container mt-5">
     <div class="modal-dialog">
@@ -15,21 +13,21 @@
             </div>
             <div class="modal-body">
                 <!--AQUI CONTEUDO DO FORM-->
-                <form method="post" asp-action="AssociarEmpresa">
+                <form method="post" asp-action="AssociarIndividual">
+                    <input id="id" name="id" class="form-control" type="hidden" value="@Model.Id" disabled />
+
                     <div class="row">
-                        <div class="col-md-6">
-                            <label class="form-label" asp-for="IdEmpresa">Empresa</label>
-                            @*   @Html.DropDownListFor(m => m.IdEmpresa, new SelectList(ViewBag.EmpresasCND, "IdEmpresa", "RazaoSocial"), "Escolha a Empresa", new { @class = "form-control  form-select", @onchange = "mostrarValorDoSelect()", id = "idPerfil", name = "idPerfil" }) *@
-                            <select asp-for="IdEmpresa" class="form-select text-body-secondary" placeholder="Empresa">
-                                <option selected value="">Escolha a EMPRESA</option>
-                                @foreach (var item in ViewBag.Empresas)
-                                {
-
-                                    <option value="@item.Id">[@item.Id] -  @item.Razao - <span class="fs-8">(@item.Fantasia)</span></option>
-
-                                }
-                            </select>
-                            <span asp-validation-for="IdEmpresa" class="text-danger"></span>
+                        <div class="col-md-4">
+                            <label class="form-label">CNPJ</label>
+                            <input class="form-control" type="text" value="@Model.Cnpj" disabled />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Razão Social</label>
+                            <input class="form-control" type="text" value="@Model.Razao" disabled />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Fantasia</label>
+                            <input class="form-control" type="text" value="@Model.Fantasia" disabled />
                         </div>
 
                     </div>
@@ -37,7 +35,7 @@
                     <!--LISTA TODOS OS ESTADOS CADASTRADOS-->
                     <div class="row mt-2">
 
-                        <label class="form-label" asp-for="IdEstado">Estados</label>
+                        <label class="form-label">Estados</label>
                         <hr class="m-0 mb-2" />
                         @foreach (var estado in ViewBag.Estados)
                         {
@@ -52,9 +50,8 @@
 
 
                     </div>
-                   
+                    <hr />
                     <div class="row">
-                        <hr class="m-0 mb-2" />
                         <div class="col-md-12">
 
                             <button type="submit" class="btn btn-outline-primary align-middle float-md-end me-2"><i class="fa-solid fa-floppy-disk"></i> SALVAR</button>

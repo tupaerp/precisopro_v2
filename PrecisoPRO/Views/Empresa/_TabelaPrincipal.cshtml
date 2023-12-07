@@ -39,9 +39,11 @@
                 }
               
                 <td class="prn-border-table text-center">
-                    <button data-toggle="tooltip" data-placement="left" data-title="Alterar Registro" class="btn btn-outline-primary border-0" data-value="@item.Id" onclick="chamarEdit(@item.Id,false)"><i class="fas fa-edit"></i></button>
-                    <button data-toggle="tooltip" data-placement="left" data-title="Visualizar Registro" class="btn btn-outline-success border-0" data-value="@item.Id" onclick="chamarDetails(@item.Id,false)"><i class="fas fa-eye"></i> </button>
-                    <button data-toggle="tooltip" data-placement="left" data-title="Apagar Registro" class="btn btn-outline-danger border-0" data-value="@item.Id" onclick="chamarDelete(@item.Id,false)"><i class="fas fa-trash-alt"></i> </button>
+
+                    <button data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-title="Alterar Registro" class="btn btn-outline-primary border-0" data-value="@item.Id" onclick="chamarEdit(@item.Id,false)"><i class="fas fa-edit"></i></button>
+                    <button data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Visualizar Registro" class="btn btn-outline-success border-0" data-value="@item.Id" onclick="chamarDetails(@item.Id,false)"><i class="fas fa-eye"></i> </button>
+                    <button data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Apagar Registro" class="btn btn-outline-danger border-0" data-value="@item.Id" onclick="chamarDelete(@item.Id,false)"><i class="fas fa-trash-alt"></i> </button>
+                    <a onclick="chamarAssociarIndividual(@item.Id,false)" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Associar Estado" class="btn btn-outline-secondary border-0"><i class="fa-solid fa-tag"></i></a>
 
                 </td>
 

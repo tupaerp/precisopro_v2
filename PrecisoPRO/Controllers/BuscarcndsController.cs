@@ -5,7 +5,7 @@ using PrecisoPRO.Models.ViewModels;
 
 namespace PrecisoPRO.Controllers
 {
-    public class BuscarCNDs : Controller
+    public class BuscarcndsController : Controller
     {
         //contexto do banco de dados
         private readonly IEmpresaRepository _empresaRepository;
@@ -19,7 +19,7 @@ namespace PrecisoPRO.Controllers
         int contSalvos = 0;
 
         //CONSTRUTOR
-        public BuscarCNDs(IEmpresaRepository empresaRepository, IEstadoRepository estadoRepository, ICndUf emitirCndUf, IAssociarEmpUf associarEmpUf)
+        public BuscarcndsController(IEmpresaRepository empresaRepository, IEstadoRepository estadoRepository, ICndUf emitirCndUf, IAssociarEmpUf associarEmpUf)
         {
             _empresaRepository = empresaRepository;
             _estadoRepository = estadoRepository;
@@ -134,5 +134,8 @@ namespace PrecisoPRO.Controllers
 
             return View(associarEmpresa);
         }
+
+
+      
     }
 }

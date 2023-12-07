@@ -44,7 +44,7 @@
                         <form  asp-controller="Empresa" asp-action="index" class="col-md-12">
                             <!--campos-->
                             <div class="row g-2">
-                                <div class="col-md-3">
+                                <div class="col-md-2">
                                     <label for="razao" class="form-label">CNPJ</label>
                                     @if (ViewBag.Cnpj == null)
                                     {
@@ -59,7 +59,7 @@
 
 
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <label for="razao" class="form-label">Razão</label>
                                     @if(ViewBag.Razao == null)
                                     {
@@ -67,14 +67,14 @@
                                     }
                                     else
                                     {
-                                    @Html.TextBox("razao", (string)ViewBag.Razao, new { @class = "form-control", onkeyup = "maiuscula(this);", placeholder = "Digite a Razão Social" })
+                                        @Html.TextBox("razao", (string)ViewBag.Razao, new { @class = "form-control", onkeyup = "maiuscula(this);", placeholder = "Digite a Razão Social" })
                                     }
  
                
                
 
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-2">
                                     <label for="fantasia" class="form-label">Fantasia</label>
                                     @if (ViewBag.Fantasia == null)
                                     {
@@ -86,14 +86,9 @@
                                     }
                               
                                 </div>
-                               
-
-
-                            </div>
-                            <div class="row g-2 align-items-center mt-1">
-                                <div class="col-md-4">
+                                <div class="col-md-2">
                                     <label for="fantasia" class="form-label">Cidade</label>
-                                  
+
                                     @if (ViewBag.Cidade == null)
                                     {
                                         @Html.TextBox("cidade", null, new { @class = "form-control", onkeyup = "maiuscula(this);", placeholder = "Digite a Cidade" })
@@ -121,17 +116,22 @@
                                         }
                                     </select>
 
-                                    
+
                                 </div>
-                                <div id="botoes-acao" class="col-md-6" style="margin-top:2.5rem !important;">
+
+                            </div>
+                            <div class="row mt-2">
+                               
+
+                                <div id="botoes-acao" class="col-md-12">
                                    
                                      <div>
-                                          <a onclick="chamarIncluir()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Novo Registro" class="btn btn-outline-success align-middle float-lg-end me-2"><i class="fa-solid fs-6 fa-plus"></i></a>
-                                           <button type="submit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Buscar" class="btn btn-outline-primary align-middle float-md-end me-2"><i class="fa-solid fa-magnifying-glass"></i></button>
-                                           <button type="submit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Baixar" class="btn btn-outline-secondary align-middle float-md-end me-2"> <i class="fa-solid fa-download"></i></button>
-                                           <a onclick="limparInputs()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Limpar" class="btn btn-outline-warning align-middle float-md-end me-2"><i class="fa-solid fa-broom"></i></a>
-
-                                     </div>
+                                           <a onclick="chamarIncluir()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Novo Registro" class="btn btn-outline-success align-middle float-lg-end me-2"><i class="fa-solid fs-6 fa-plus"></i></a>
+                                           <button type="submit"        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Buscar"        class="btn btn-outline-primary align-middle float-md-end me-2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                           <button type="submit"        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Baixar"        class="btn btn-outline-secondary align-middle float-md-end me-2"> <i class="fa-solid fa-download"></i></button>
+                                           <a onclick="limparInputs()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Limpar"         class="btn btn-outline-warning align-middle float-md-end me-2"><i class="fa-solid fa-broom"></i></a>
+                                      
+                                    </div>
                                    
                                 </div>
 

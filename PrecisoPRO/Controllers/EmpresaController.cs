@@ -13,14 +13,18 @@ namespace PrecisoPRO.Controllers
         //contexto do banco de dados
         private readonly IEmpresaRepository _empresaRepository;
         private readonly IEstadoRepository _estadoRepository;
+        private readonly IAssociarEmpUf _associarEmpUf;
         IEnumerable<Empresa>? listaEmpresas; //Lista enumerada
         IEnumerable<Estado>? listaEstados; //lista de estados
-       
-        public EmpresaController(IEmpresaRepository empresaRepository, IEstadoRepository estadoRepository)
+        IEnumerable<AssociarEmpUf>? listaAssociarEmpUF;
+        int contSalvos = 0;
+        public EmpresaController(IEmpresaRepository empresaRepository, IEstadoRepository estadoRepository, IAssociarEmpUf associarEmpUf)
         {
             _empresaRepository = empresaRepository;
             _estadoRepository = estadoRepository;
-                                   
+            _associarEmpUf = associarEmpUf;
+
+
         }   
         public async Task<IActionResult> Index(string cnpj, string razao, string cidade, string fantasia, string estado, int numPagina = 1) 
         {
@@ -122,5 +126,85 @@ namespace PrecisoPRO.Controllers
             ViewBag.Estados = this.listaEstados.ToList();
             return View(empresaVM);
         }
+        public async Task<IActionResult> AssociarIndividual(int id)
+        {
+            this.listaEstados = await _estadoRepository.GetAllAsyncNoTracking();
+            Empresa empresa = await _empresaRepository.GetByIdAsync(id);
+
+            //Busca os Estados
+            ViewBag.Estados = this.listaEstados.ToList();
+            return View(empresa);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AssociarIndividual(string? empresa, List<string> checkUf)
+        {
+            this.listaAssociarEmpUF = await _associarEmpUf.GetAllAsyncNoTracking();
+            int id = int.Parse(empresa);
+
+
+
+            if (ModelState.IsValid)
+            {
+                //agora percorrer o array e associar a empresa que veio no parametro a cada estado que foi selecionado
+                foreach (var valorCheckbox in checkUf)
+                {
+                    //buscar peplo id da empresa
+                    var jaExisteUf = this.listaAssociarEmpUF.Where(x => x.IdEstado.Equals(int.Parse(valorCheckbox)) && x.IdEmpresa.Equals(id)).ToList();
+
+
+                    if (jaExisteUf.Count == 0)
+                    {
+                        var associar = new AssociarEmpUf
+                        {
+                            IdEmpresa = id,
+                            IdEstado = int.Parse(valorCheckbox),
+                            Data_Cad = DateTime.Now
+                        };
+                        try
+                        {
+                            _associarEmpUf.Adicionar(associar);
+                            contSalvos++; //conta a quantidade de registros salvos
+
+                        }
+                        catch (Exception e)
+                        {
+                            TempData["Error"] = "Probelmas ao salvar o registro, tente novamente";
+                            return RedirectToAction("Index");
+                        }
+
+                    }
+
+
+                }
+                if (contSalvos > 0)
+                {
+                    TempData["Success"] = "Registros ASSOCIADOS com sucesso: Qtd: " + contSalvos;
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    TempData["Warning"] = "Nenhum registro ASSOCIADO";
+                    return RedirectToAction("Index");
+                }
+
+
+
+
+            }
+            else
+            {
+                ModelState.AddModelError("", "ERRO");
+            }
+            this.listaEstados = await _estadoRepository.GetAllAsyncNoTracking();
+            this.listaEmpresas = await _empresaRepository.GetAllAsyncNoTracking();
+
+            //Busca os Estados
+            ViewBag.Empresas = this.listaEmpresas.ToList();
+            ViewBag.Estados = this.listaEstados.ToList();
+
+            return View("Index");
+        }
     }
 }
+

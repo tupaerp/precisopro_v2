@@ -50,20 +50,20 @@ jQuery(function ($) {
     $("#campoTelefone").mask("(999) 999-9999");
 
 });
-function chamarIncluir() {
+//function chamarIncluir() {
 
-    var cont = document.querySelector(".pro-titulo"); //pega o titulo
+//    var cont = document.querySelector(".pro-titulo"); //pega o titulo
 
-    var controller = cont.innerText;
+//    var controller = cont.innerText;
 
   
 
-    $("#modal").load("/" + controller + "/Incluir/", function () {
+//    $("#modal").load("/" + controller + "/Incluir/", function () {
 
-        $('#modal').modal("show");
+//        $('#modal').modal("show");
 
-    });
-}
+//    });
+//}
 
 function chamarAssociar() {
 
@@ -75,6 +75,18 @@ function chamarAssociar() {
 
     $("#modal").load("/" + controller + "/AssociarEmpresa/", function () {
 
+        $('#modal').modal("show");
+
+    });
+}
+
+function chamarAssociarIndividual(id) {
+
+    var cont = document.querySelector(".pro-titulo"); //pega o titulo
+
+    var controller = cont.innerText;
+   
+    $("#modal").load("/" + controller + "/AssociarIndividual/" + id, function () {
         $('#modal').modal("show");
 
     });

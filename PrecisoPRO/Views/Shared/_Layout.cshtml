@@ -16,6 +16,12 @@
     <!----===== Boxicons CSS - MATHEUS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
+    <style>
+        ul li.nav-item {
+            transition: .90s !important;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -148,8 +154,8 @@
                 <div class="menu border-top">
                     <ul>
                         <li class="search-box ">
-                            <i class='bx bx-search icon'></i>
-                            <input type="text" placeholder="Buscar">
+                            <i data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Buscar" class='bx bx-search icon'></i>
+                            <input  type="text" class=" fs-6_5" placeholder="Buscar">
                         </li>
                     </ul>
                     <!----===== INÍCIO TESTE DROPDOWN ===== -->
@@ -160,29 +166,44 @@
 
                             <a href="/home" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Início">
 
-                                <i class='bx bx-home-alt icon'></i>
-                                <span class="text nav-text">Início</span>
+                                <i class='bx bx-home-alt icon fs-4'></i>
+                              
+                                <span class="text nav-text fs-6_5">Início</span>
                             </a>
                         </li>
 
                         <li class="nav-link">
 
 
-                            <a href="/empresa" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Empresa">
-
-
-                                <i class='bx bx-bar-chart-alt-2 icon'></i>
-                                <span class="text nav-text">Tabelas</span>
+                           @*  <a href="/empresa" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Empresa"> *@
+                             <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Cadastrar Empresa" asp-controller="Empresa" asp-action="Index">
+                                <i class="fa-regular fa-building  icon"></i>
+                                
+                                 @* <i class='bx bx-bar-chart-alt-2 icon'></i> *@
+                                
+                                <span class="text nav-text fs-6_5">Cadastrar Empresas</span>
                             </a>
                         </li>
 
 
                         <li class="nav-link">
-                            <a href="/Usuario" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Usuário">
-                                <i class='bx bx-add-to-queue icon'></i>
-                                <span class="text nav-text">Cadastrar</span>
+                            <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Cadastrar Usuário" asp-controller="Usuario" asp-action="Index">
+                             @*    <i class='bx bx-add-to-queue icon'></i> *@
+                                <i class="fa-regular fa-user icon"></i>
+                                <span class="text nav-text fs-6_5">Cadastrar Usuários</span>
                             </a>
                         </li>
+
+                        <li class="nav-link">
+                            <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Configurar CND's" asp-controller="Buscarcnds" asp-action="Index">
+                                @*    <i class='bx bx-add-to-queue icon'></i> *@
+                              
+                                <i class="fa-solid fa-laptop-file icon"></i>
+                                <span class="text nav-text fs-6_5">Configurar CNDs</span>
+                            </a>
+                        </li>
+
+
                         <li class="nav-link">
                             <a href="#" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Notificações">
                                 <i class='bx bx-bell icon'></i>
