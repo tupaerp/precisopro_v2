@@ -1,0 +1,48 @@
+﻿
+.pagination > li {
+    border: 1px solid #ccc;
+    text-decoration: none;
+    padding: 5px 12px 5px 12px;
+   
+}
+.pagination > li > a{
+  
+    text-decoration: none;
+    
+}
+
+.pagination > .PagedList-skipToPrevious {
+    border-top-left-radius: 10px;
+    border-right: none;
+    border-bottom-left-radius: 10px;
+}
+
+.pagination > .PagedList-skipToNext {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  
+    border-left: none;
+}
+.pagination > .active {
+    background-color: steelblue;
+    color:#fff;
+}
+
+
+.page-item:hover a{
+    background-color: steelblue;
+    color: #fff !important;
+}
+.page-item:hover{
+    background-color: steelblue;
+    color: #fff !important;
+}
+/*REPONSIVIDADE DA TABELA*/
+/* para colunas das tabelas: tira as colunas de acordo com a resulução da tela*/
+/*telas abaixo de 650 as colunas que estiverem com essa classe: prn-tb-reps serão removidas*/
+@media screen and (max-width:650px) {
+    .prn-tb-resp {
+        display: none;
+    }
+   
+}

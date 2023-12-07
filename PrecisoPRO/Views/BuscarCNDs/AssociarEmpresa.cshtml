@@ -1,0 +1,70 @@
+﻿@using PrecisoPRO.Models.ViewModels
+@model CndUfViewModel
+@{
+    ViewData["Title"] = "AssociarEmpresa";
+    Layout = "~/Views/Shared/_LayoutModais.cshtml";
+}
+
+
+<div class="container mt-5">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="Esqueceu a senha?">Associar Empresa a UF - BUSCA CND</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!--AQUI CONTEUDO DO FORM-->
+                <form method="post" asp-action="AssociarEmpresa">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label" asp-for="IdEmpresa">Empresa</label>
+                            @*   @Html.DropDownListFor(m => m.IdEmpresa, new SelectList(ViewBag.EmpresasCND, "IdEmpresa", "RazaoSocial"), "Escolha a Empresa", new { @class = "form-control  form-select", @onchange = "mostrarValorDoSelect()", id = "idPerfil", name = "idPerfil" }) *@
+                            <select asp-for="IdEmpresa" class="form-select text-body-secondary" placeholder="Empresa">
+                                <option selected value="">Escolha a EMPRESA</option>
+                                @foreach (var item in ViewBag.Empresas)
+                                {
+
+                                    <option value="@item.Id">[@item.Id] -  @item.Razao - <span class="fs-8">(@item.Fantasia)</span></option>
+
+                                }
+                            </select>
+                            <span asp-validation-for="IdEmpresa" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                    <!--LISTA TODOS OS ESTADOS CADASTRADOS-->
+                    <div class="row mt-2">
+
+                        <label class="form-label" asp-for="IdEstado">Estados</label>
+                        <hr class="m-0 mb-2" />
+                        @foreach (var estado in ViewBag.Estados)
+                        {
+                            <div class="col-md-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="checkUf" id="@estado.Uf" value="@estado.Id">
+                                    <label class="form-check-label" for="inlineCheckbox1">@estado.Descricao</label>
+                                </div>
+                            </div>
+
+                        }
+
+
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <button type="submit" class="btn btn-outline-primary align-middle float-md-end me-2"><i class="fa-solid fa-floppy-disk"></i> SALVAR</button>
+
+                        </div>
+                    </div>
+                </form>
+
+                <!--termina aqui: finalizr form-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--FIM DO CONTAINER-->

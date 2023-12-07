@@ -1,0 +1,103 @@
+﻿﻿@{
+    Layout = "_LayoutLogin";
+    ViewData["Title"] = "Login";
+}
+
+<head>
+    <link href="~/css/CSS-login.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+
+
+
+<body>
+    <!--CARD LOGIN-->
+    <section class="login">
+        <div class="container py-5">
+            <div class="row justify-content-between text-center py-5">
+                <div class="col-md-8 p-3">
+                    <!--IMAGEM LUPA-->
+                    <img src="~/lib/IMG/LUPA PRECISO PRO.png" id="lupa" class="img-fluid" alt="Lupa" width="500">
+                </div>
+                <!--CARD-->
+                <div class="col-md-4 px-3" style="max-width: 33rem;">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <div class="text-center pt-4">
+                                <!--LOGO-->
+                                <img src="~/lib/IMG/LOGO TOP.png" class="img-fluid" alt="logo" width="300">
+
+                                <!--INPUT DE E-MAIL -->
+                                <div class="form-floating opacity-75 mt-5">
+                                    <input type="email" id="floatingInput" class="form-control input-login"
+                                           placeholder="nome@exemplo.com">
+                                    <label for="floatingInput"><i class="bi bi-person"></i> Usuario ou E-mail</label>
+                                </div>
+
+                                <!--INPUT DE SENHA -->
+                                <div class="form-floating opacity-75 mt-4">
+                                    <input type="password" id="floatingPassword" class="form-control input-login"
+                                           placeholder="Senha">
+                                    <label for="floatingPassword"><i class="bi bi-lock"></i> Senha</label>
+                                </div>
+                                <!--BOTÃO ENTRAR -->
+                                <div class="text-center p-3 mt-2">
+                                    <a href="/home" class="col-md-10 btn text-center text-white"
+                                       style="background-color: #953534;" type="submit">
+                                        <h3>Entrar</h3>
+                                    </a>
+                                </div>
+
+                                <!-- BOTÃO MODAL ESQUECEU A SENHA -->
+                                <div class="form-group text-center">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalsenha">
+                                        Esqueceu a
+                                        senha?
+                                    </a>
+                                </div>
+
+                                <!-- ANO CRIACAO -->
+                                <p class="mt-5 mb-3 text-muted text-center">© 2023</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <section>
+        <!-- MODAL-->
+        <div class="modal fade" id="modalsenha" tabindex="-1" aria-labelledby="Esqueceu a senha?" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="Esqueceu a senha?">Esqueceu a sua senha?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <div class="py-3">
+                            <img src="~/lib/IMG/LOCK 2.png" class="img-fluid" width="150" alt="">
+                            <h3>Problemas para entrar?</h3>
+
+                            <h3 class="fs-6 opacity-50">Insira o seu email, telefone ou nome de usuário e enviaremos um link para você voltar a acessar a sua conta.</h3>
+
+                        </div>
+                        <div class="form-floating opacity-75 p-3 mt-3">
+                            <input type="email" id="floatingInput" class="form-control input-login" placeholder="nome@exemplo.com">
+                            <label for="floatingInput"><i class="bi bi-person"></i> Usuario ou E-mail</label>
+                        </div>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalsenha">Entrar em contato com o suporte</a>
+                    </div>
+                    <div class="modal-footer justify-content-md-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>

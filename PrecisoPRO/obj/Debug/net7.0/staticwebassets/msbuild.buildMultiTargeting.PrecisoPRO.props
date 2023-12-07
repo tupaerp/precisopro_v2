@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PrecisoPRO.props" />
+</Project>

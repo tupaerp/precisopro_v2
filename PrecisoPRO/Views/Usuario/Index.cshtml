@@ -1,0 +1,141 @@
+﻿﻿@using X.PagedList.Mvc.Core
+@using X.PagedList.Web.Common
+@using X.PagedList
+@model X.PagedList.IPagedList<Usuario>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Usuario";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card align-middle">
+                <div class="card-header align-items-center">
+                    <span class="fs-5 fw-bolder text-black opacity-75">Cadastro de Usuarios</span>
+                </div>
+
+
+
+                <div class="card-body">
+                    <!--linha para busca-->
+                    <div class="row border-bottom pb-3">
+                        <div class="row">
+                            @if (TempData["Error"] != null)
+                            {
+
+                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                    <strong><i class="fa-solid fa-xmark fs-4"></i> </strong>  @TempData["Error"]
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+
+
+                            }
+                            @if (TempData["Success"] != null)
+                            {
+
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <strong><i class="fa-regular fa-thumbs-up fs-4"></i></strong> @TempData["Success"]
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+
+
+                            }
+                        </div>
+                        <form asp-controller="Usuario" asp-action="index" class="col-md-12">
+                            <div class="row g-2">
+                                <div class="col-md-3">
+                                    <label for="nome" class="form-label">Nome</label>
+
+                                    @if (ViewBag.Nome == null)
+                                    {
+                                        @Html.TextBox("nome", null, new { @class = "form-control", onkeyup = "maiuscula(this);", placeholder = "Digite o Nome" })
+                                    }
+
+                                    else
+                                    {
+                                        @Html.TextBox("nome", (string)ViewBag.Nome, new { @class = "form-control", onkeyup = "maiuscula(this);", placeholder = "Digite o Nome" })
+
+                                    }
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="login" class="form-label">Login</label>
+
+                                    @if (ViewBag.Login == null)
+                                    {
+                                        @Html.TextBox("login", null, new { @class = "form-control", placeholder = "Digite o Login" })
+                                    }
+
+                                    else
+                                    {
+                                        @Html.TextBox("login", (string)ViewBag.Login, new { @class = "form-control", placeholder = "Digite o Login" })
+
+                                    }
+                                </div>
+                                <div id="botoes-acao" class="col-md-6" style="margin-top:2.5rem !important;">
+
+                                    <div>
+                                        <a onclick="chamarIncluir()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Novo Usuario" class="btn btn-outline-success align-middle float-lg-end me-2"><i class="fa-solid fs-6 fa-plus"></i></a>
+                                        <button type="submit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Buscar" class="btn btn-outline-primary align-middle float-md-end me-2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                        <a onclick="limparInputs()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Limpar" class="btn btn-outline-warning align-middle float-md-end me-2"><i class="fa-solid fa-broom"></i></a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <!--Linha para tabela-->
+                    <div class="row mt-2">
+                        <div class="col-md-12 table-responsive">
+                            <partial name="_TabelaPrincipal" />
+                        </div>
+                    </div> <!--fim linha tabela-->
+                </div>
+                <!--Botoes-->
+                <div class="card-footer ">
+                    <div class="container-fluid ">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+
+                                <span> Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount - Total de registros: @Model.TotalItemCount</span>
+
+                            </div>
+                            <div class="col-6">
+                                <span style="float:right;">
+                                    @Html.PagedListPager(Model,
+                                             numPagina => Url.Action("Index", new
+                                             {
+                                                 numPagina,
+                                                 razao = ViewBag.Razao,
+                                                 cidade = ViewBag.Cidade,
+                                                 fantasia = ViewBag.Fantasia,
+                                                 estado = ViewBag.Estado
+                                             }),
+                                             new PagedListRenderOptions()
+                                    {
+                                        LiElementClasses = new List<string> { "page-item" }
+                                    }
+                                             )
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+<section>
+    <!-- MODAL-->
+    <div class="modal fade" id="modal" aria-hidden="true">
+    </div>
+</section>

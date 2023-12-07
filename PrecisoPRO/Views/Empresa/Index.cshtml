@@ -1,0 +1,198 @@
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Web.Common
+@using X.PagedList
+@model X.PagedList.IPagedList<Empresa>
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Empresa";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card align-middle">
+                <div class="card-header align-items-center">
+                    <span class="fs-5 fw-bolder text-black opacity-75">Cadastro de Empresas  - REGISTROS</span>
+
+                </div>
+                <div class="card-body">
+                    <!--LINHA PARA BUSCAS-->
+                    <div class="row border-bottom py-2">
+                        <div class="row">
+                            @if (TempData["Error"] != null)
+                            {
+                               
+                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                    <strong><i class="fa-solid fa-xmark fs-4"></i> </strong>  @TempData["Error"]
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+
+                              
+                            }
+                            @if (TempData["Success"] != null)
+                            {
+                               
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <strong><i class="fa-regular fa-thumbs-up fs-4"></i></strong> @TempData["Success"]
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+
+                                
+                            }
+                        </div>
+                        <form  asp-controller="Empresa" asp-action="index" class="col-md-12">
+                            <!--campos-->
+                            <div class="row g-2">
+                                <div class="col-md-3">
+                                    <label for="razao" class="form-label">CNPJ</label>
+                                    @if (ViewBag.Cnpj == null)
+                                    {
+                                        @Html.TextBox("cnpj", null, new { @class = "form-control", onkeyup = "maiuscula(this);", placeholder = "Digite o CNPJ" })
+                                    }
+                                    else
+                                    {
+                                        @Html.TextBox("cnpj", (string)ViewBag.Cnpj, new { @class = "form-control", onkeyup = "maiuscula(this);", placeholder = "Digite o CNPJ" })
+                                    }
+
+
+
+
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="razao" class="form-label">Razão</label>
+                                    @if(ViewBag.Razao == null)
+                                    {
+                                        @Html.TextBox("razao", null, new { @class = "form-control", onkeyup = "maiuscula(this);", placeholder = "Digite a Razão Social" })
+                                    }
+                                    else
+                                    {
+                                    @Html.TextBox("razao", (string)ViewBag.Razao, new { @class = "form-control", onkeyup = "maiuscula(this);", placeholder = "Digite a Razão Social" })
+                                    }
+ 
+               
+               
+
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="fantasia" class="form-label">Fantasia</label>
+                                    @if (ViewBag.Fantasia == null)
+                                    {
+                                        @Html.TextBox("fantasia", null, new { @class = "form-control", onkeyup = "maiuscula(this);", placeholder = "Digite a Fantasia" })
+                                    }
+                                    else
+                                    {
+                                        @Html.TextBox("fantasia", (string)ViewBag.Fantasia, new { @class = "form-control", onkeyup = "maiuscula(this);", placeholder = "Digite a Fantasia" })
+                                    }
+                              
+                                </div>
+                               
+
+
+                            </div>
+                            <div class="row g-2 align-items-center mt-1">
+                                <div class="col-md-4">
+                                    <label for="fantasia" class="form-label">Cidade</label>
+                                  
+                                    @if (ViewBag.Cidade == null)
+                                    {
+                                        @Html.TextBox("cidade", null, new { @class = "form-control", onkeyup = "maiuscula(this);", placeholder = "Digite a Cidade" })
+                                    }
+                                    else
+                                    {
+                                        @Html.TextBox("cidade", (string)ViewBag.Cidade, new { @class = "form-control", onkeyup = "maiuscula(this);", placeholder = "Digite a Cidade" })
+                                    }
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label for="inputState" class="form-label">Estado</label>
+                                    <select class="form-select" name="estado" id="estado">
+                                        <option value="">Escolha a UF</option>
+                                        @foreach (var item in ViewBag.Estados)
+                                        {
+                                            if (item.Uf == ViewBag.Estado)
+                                            {
+                                                <option selected value="@item.Uf">@item.Uf</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@item.Uf">@item.Uf</option>
+                                            }
+                                        }
+                                    </select>
+
+                                    
+                                </div>
+                                <div id="botoes-acao" class="col-md-6" style="margin-top:2.5rem !important;">
+                                   
+                                     <div>
+                                          <a onclick="chamarIncluir()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Novo Registro" class="btn btn-outline-success align-middle float-lg-end me-2"><i class="fa-solid fs-6 fa-plus"></i></a>
+                                           <button type="submit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Buscar" class="btn btn-outline-primary align-middle float-md-end me-2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                           <button type="submit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Baixar" class="btn btn-outline-secondary align-middle float-md-end me-2"> <i class="fa-solid fa-download"></i></button>
+                                           <a onclick="limparInputs()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Limpar" class="btn btn-outline-warning align-middle float-md-end me-2"><i class="fa-solid fa-broom"></i></a>
+
+                                     </div>
+                                   
+                                </div>
+
+                            </div>
+
+                         
+                        </form><!--fim linha busca-->
+                    </div>
+                    <!--Linha para tabela-->
+                    <div class="row mt-2">
+                        <div class="col-md-12 table-responsive">
+                            <partial name="_TabelaPrincipal" />
+                        </div>
+                    </div> <!--fim linha tabela-->
+                </div>
+                <!--Botoes-->
+                <div class="card-footer ">
+                    <div class="container-fluid ">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+
+                                <span> Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount - Total de registros: @Model.TotalItemCount</span>
+
+                            </div>
+                            <div class="col-6">
+                                <span style="float:right;">
+                                    @Html.PagedListPager(Model,
+                                             numPagina => Url.Action("Index", new
+                                             {
+                                                 numPagina,
+                                                 razao = ViewBag.Razao,
+                                                 cidade = ViewBag.Cidade,
+                                                 fantasia = ViewBag.Fantasia,
+                                                 estado = ViewBag.Estado
+                                             }),
+                                             new PagedListRenderOptions()
+                                    {
+                                        LiElementClasses = new List<string> { "page-item" }
+                                    }
+                                             )
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+  <section>
+      <!-- MODAL-->
+      <div class="modal fade" id="modal"   aria-hidden="true">
+        
+      </div>
+  </section>
+ 
+

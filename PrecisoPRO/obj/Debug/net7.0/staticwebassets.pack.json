@@ -1,0 +1,657 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\.nuget\\packages\\bootstrap\\5.3.2\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\PrecisoPRO.bundle.scp.css",
+      "PackagePath": "staticwebassets\\PrecisoPRO.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\css\\CSS-home.css",
+      "PackagePath": "staticwebassets\\css\\CSS-home.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\css\\CSS-layout.css",
+      "PackagePath": "staticwebassets\\css\\CSS-layout.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\css\\CSS-login.css",
+      "PackagePath": "staticwebassets\\css\\CSS-login.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\css\\dev_paulo.css",
+      "PackagePath": "staticwebassets\\css\\dev_paulo.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\AC.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\AC.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\ADICIONAR.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\ADICIONAR.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\AL.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\AL.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\AM.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\AM.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\AP.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\AP.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\BA.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\BA.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\CASA.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\CASA.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\CE.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\CE.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\DF.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\DF.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\ES.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\ES.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\ESTATISTICA.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\ESTATISTICA.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\GO.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\GO.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\LOCK 2.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\LOCK 2.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\LOCK.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\LOCK.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\LOGO TOP.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\LOGO TOP.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\LOGOMENOR2.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\LOGOMENOR2.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\LUPA PRECISO PRO.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\LUPA PRECISO PRO.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\MA.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\MA.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\MG.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\MG.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\MS.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\MS.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\MT.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\MT.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\NOTIFICACAO.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\NOTIFICACAO.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\PA.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\PA.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\PB.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\PB.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\PE.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\PE.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\PI.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\PI.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\PR.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\PR.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\PRECISO LUPA.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\PRECISO LUPA.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\RJ.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\RJ.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\RN.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\RN.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\RO.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\RO.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\RR.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\RR.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\RS.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\RS.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\SC.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\SC.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\SE.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\SE.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\SP.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\SP.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\TO.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\TO.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\USUARIO.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\USUARIO.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\USUARIO2.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\USUARIO2.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\cadastrar.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\cadastrar.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\início.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\início.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\iníciocinza.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\iníciocinza.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\logobottom.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\logobottom.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\notificacoescinza.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\notificacoescinza.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\tabelas.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\tabelas.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\tabelascinza.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\tabelascinza.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\IMG\\usermobile.png",
+      "PackagePath": "staticwebassets\\lib\\IMG\\usermobile.png"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\bootstrap\\dist\\js\\sidebar.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\sidebar.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\jquery\\jquery.mask.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\jquery.mask.min.js"
+    },
+    {
+      "Id": "C:\\Users\\preciso\\source\\repos\\PrecisoPRO\\PrecisoPRO\\wwwroot\\lib\\jquery\\jquery.maskedinput.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\jquery.maskedinput.min.js"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.PrecisoPRO.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.PrecisoPRO.props",
+      "PackagePath": "build\\PrecisoPRO.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.PrecisoPRO.props",
+      "PackagePath": "buildMultiTargeting\\PrecisoPRO.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.PrecisoPRO.props",
+      "PackagePath": "buildTransitive\\PrecisoPRO.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

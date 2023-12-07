@@ -1,0 +1,133 @@
+﻿@using PrecisoPRO.Models.ViewModels
+@model IEnumerable<CndUfViewModel>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "BuscarCNDs";
+}
+<div class="container-fluid">
+   @*  <!--LINHA DO CARD PARA CND FEDRAL-->
+    <div class="row">
+
+    </div>
+
+    <!--LINHA DO CARD PARA CND ESTADUAL-->
+    <div class="row">
+
+    </div> *@
+
+    <div class="card" style="min-height: 95vh;">
+        <div class="card-header">
+           CERTIDÃO NEGATIVAS DE DÉBITOS
+        </div>
+        <div class="card-body">
+            <div class="accordion" id="accordionExample">
+
+                <div class="accordion-item border-bottom border-white">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button bg-primary-subtle bg-opacity-75 text-dark-emphasis" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            CND's FEDERAIS
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>MOSTRAR TODAS AS CNDS FEDERAIS.</strong>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-primary-subtle bg-opacity-75 text-dark-emphasis" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            CND's ESTADUAIS
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row">
+                                @if (TempData["Error"] != null)
+                                {
+
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <strong><i class="fa-solid fa-xmark fs-4"></i> </strong>  @TempData["Error"]
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+
+
+                                }
+                                @if (TempData["Success"] != null)
+                                {
+
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <strong><i class="fa-regular fa-thumbs-up fs-4"></i></strong> @TempData["Success"]
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+
+
+                                }
+                                @if (TempData["Warning"] != null)
+                                {
+
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <strong><i class="fa-solid fa-triangle-exclamation fs-4"></i></strong> @TempData["Warning"]
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+
+
+                                }
+                            </div>
+                            <div class="row g-2">
+                                @foreach (var estadoCount in ViewBag.ContagemPorEstado)
+                                {
+                                    foreach (var estado in ViewBag.Estados)
+                                    {@if (estadoCount.Item1 == estado.Uf)
+                                        {
+                                            <div class="col-md-1 mb-2">
+                                                <div class="card">
+                                                    <figure>
+                                                        <img src="@estado.Bandeira" class="card-img-top" alt="@estado.Descricao">
+                                                        <figcaption class="mx-1 fs-8">@estado.Descricao</figcaption>
+                                                    </figure>
+                                                   
+                                                    <div class="card-body pt-0">
+                                                        <h5 class="card-text fs-8 fw-medium">Qtd. Certidoes: <string>0</string></h5>
+                                                        <h5 class="card-text fs-8 fw-medium">Qtd. Empresas: <string>@estadoCount.Item2</string></h5>
+                                                        <a href="#" class="btn btn-outline-primary btn-sm text-center fs-7">VISUALIZAR </a>
+                                                    </div>
+                                                    
+
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                  
+                                    
+                                }
+                          
+                            </div> 
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a onclick="chamarAssociar()" class="btn btn-outline-success align-middle float-lg-end me-2"><i class="fa-solid fs-6 fa-upload"></i> Associar Empresa</a>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+<section>
+    <!-- MODAL-->
+    <div class="modal fade" id="modal" aria-hidden="true">
+    </div>
+</section>

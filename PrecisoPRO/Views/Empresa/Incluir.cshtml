@@ -1,0 +1,144 @@
+﻿@using PrecisoPRO.Models.ViewModels;
+@model EmpresaViewModel
+@{
+    ViewData["Title"] = "Incluir";
+    Layout = "~/Views/Shared/_LayoutModais.cshtml";
+}
+<div class="container mt-5">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="Esqueceu a senha?">Incluir nova EMPRESA</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!--AQUI CONTEUDO DO FORM-->
+                <form method="post" asp-action="Incluir">
+                    <!--Inicio Form de Cadastro-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label asp-for="Razao" class="form-label">Razão a Social*</label>
+                            <input asp-for="Razao" class="form-control" placeholder="Digite a Razão Social" onkeyup="maiuscula(this);">
+                            <span asp-validation-for="Razao" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-12 mt-3">
+                            <label asp-for="Fantasia" class="form-label">Fantasia*</label>
+                            <input asp-for="Fantasia" class="form-control" placeholder="Digite a Fantasia" onkeyup="maiuscula(this);">
+                            <span asp-validation-for="Fantasia" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row  mt-3">
+                         <div class="col-md-6">
+                            <label asp-for="Cnpj" class="form-label">CNPJ*</label>
+                            <input asp-for="Cnpj" class="form-control" placeholder="Digite o CNPJ">
+                            <span asp-validation-for="Cnpj" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Ie" class="form-label">I.E</label>
+                            <input asp-for="Ie" class="form-control" placeholder="Digite a Inscrição " onkeyup="maiuscula(this);">
+                          
+                        </div>
+                      
+
+                    </div>
+
+
+                    <div class="row mt-3">
+                        <div class="col-md-2">
+                            <label asp-for="Cep" class="form-label">CEP</label>
+                            <input asp-for="Cep" class="form-control" placeholder="Digite O CEP">
+                          
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="Endereco" class="form-label">Logradouro</label>
+                            <input asp-for="Endereco" class="form-control" placeholder="Digite a Rua, Avenida, Travessa..." onkeyup="maiuscula(this);">
+                           
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="Bairro" class="form-label">Bairro</label>
+                            <input asp-for="Bairro" class="form-control" placeholder="Digite o Bairro" onkeyup="maiuscula(this);">
+
+                        </div>
+                        <div class="col-md-2">
+                            <label asp-for="Numero" class="form-label">Número</label>
+                            <input asp-for="Numero" class="form-control" placeholder="Digite o Número" onkeyup="maiuscula(this);">
+                          
+                        </div>
+                       
+
+
+
+                    </div>
+                    <div class="row mt-3 border-bottom">
+                        <div class="col-md-4">
+                            <label asp-for="Cidade" class="form-label">Cidade</label>
+                            <input asp-for="Cidade" class="form-control" placeholder="Digite a Cidade" onkeyup="maiuscula(this);">
+                            <span asp-validation-for="Cidade" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label asp-for="UF" class="form-label">Estado</label>
+                            <select asp-for="UF" class="form-select text-body-secondary" placeholder="Estado">
+                                <option value="">Escolha a UF</option>
+                                @foreach (var item in ViewBag.Estados)
+                                {
+                                    if (item.Uf == ViewBag.Estado)
+                                    {
+                                        <option selected value="@item.Uf">@item.Uf</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.Uf">@item.Uf</option>
+                                    }
+                                }
+                            </select>
+                            <span asp-validation-for="UF" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-2">
+                            <label asp-for="Telefone" class="form-label">Telefone (Fixo)</label>
+                            <input asp-for="Telefone" class="form-control telefone" placeholder="Digite o Telefone">
+
+                        </div>
+
+                        <div class="col-md-2">
+                            <label asp-for="Celular" class="form-label">Telefone (Cel)</label>
+                            <input asp-for="Celular" class="form-control celular" placeholder="Digite o Celular">
+                            
+                        </div>
+                        <div class="col-md-2 mb-4">
+                            <label asp-for="Principal" class="form-label">Empresa Principal</label>
+                            <div class="form-check form-check-inline mt-2">
+                                <input asp-for="Principal" class="form-check-input" type="radio" value="1">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    SIM
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              
+                                <input asp-for="Principal" class="form-check-input" type="radio" checked value="0">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    NÃO
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--DIV BOTO~ES-->
+                    <div class="row">
+                        <div class="col-md-12 mt-3">
+
+                            <button type="button" data-bs-dismiss="modal" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="CANCELAR" class="btn btn-outline-danger align-middle float-md-end me-2"> <i class="fa-solid fa-ban"></i></button>
+                                      <button type="submit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="SALVAR" class="btn btn-outline-primary align-middle float-md-end me-2"><i class="fa-solid fa-floppy-disk"></i></button>
+                          
+
+                            
+                        </div>
+                    </div>
+                </form><!--Fim do formulario de cadastro-->
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--FIM DO CONTAINER-->

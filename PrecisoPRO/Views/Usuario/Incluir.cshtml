@@ -1,0 +1,91 @@
+﻿﻿@using PrecisoPRO.Models.ViewModels;
+@model UsuarioViewModel
+@{
+    ViewData["Title"] = "Incluir";
+    Layout = "~/Views/Shared/_LayoutModais.cshtml";
+}
+<style>
+
+    .modal {
+        --bs-modal-width: 66rem !important;
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Adicionar Usuário</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!--AQUI CONTEUDO DO FORM-->
+                <form method="post" asp-action="Incluir">
+                    <!--Inicio Form de Cadastro-->
+                    <div class="row justify-content-center">
+                        <div class="col-md-7">
+                            <label asp-for="Nome" class="form-label">Nome</label>
+                            <input asp-for="Nome" class="form-control" placeholder="Digite o Nome" onkeyup="maiuscula(this);">
+                            <span asp-validation-for="Nome" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-3">
+                            <label asp-for="Login" class="form-label">Login</label>
+                            <input asp-for="Login" class="form-control" placeholder="Digite o Login ">
+                            <span asp-validation-for="Login" class="text-danger"></span>
+
+                        </div>
+                    </div>
+                    <div class="row mt-3 justify-content-center">
+                        <div class="col-md-5">
+                            <label asp-for="Senha" class="form-label">Senha</label>
+                            <input asp-for="Senha" type="password" class="form-control" placeholder="Digite a Senha">
+                            <span asp-validation-for="Senha" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-5">
+                            <label asp-for="ConfirmarSenha" class="form-label"> Confirmar Senha</label>
+                            <input asp-for="ConfirmarSenha" type="password" class="form-control" placeholder="Confirme a Senha">
+                            <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                    <div class="row mt-3 justify-content-center">
+                        <div class="col-md-10">
+                            <label asp-for="Email" class="form-label">E-mail</label>
+                            <input asp-for="Email" class="form-control" placeholder="Digite o Email">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mt-3 justify-content-center">
+                        <div class="col-md-4">
+                            <label asp-for="Celular" class="form-label">Celular</label>
+                            <input asp-for="Celular" class="form-control" placeholder="Digite o Celular">
+                            <span asp-validation-for="Celular" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="EmpresaId" class="form-label">Empresa</label>
+                            <select asp-for="EmpresaId" class="form-select text-body-secondary" placeholder="Empresa">
+                                <option value="">Escolha a Empresas</option>
+                                @foreach (var item in ViewBag.Empresas)
+                                {
+
+                                    <option selected value="@item.Id">@item.Razao</option>
+
+                                }
+                            </select>
+                            <span asp-validation-for="EmpresaId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <!--DIV BOTO~ES-->
+                    <div class="row py-3 mt-3 justify-content-right">
+                        <div class="col-md-12" style="padding-right:5.7rem!important">
+                            <button type="button" data-bs-dismiss="modal" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="CANCELAR" class="btn btn-outline-danger align-middle float-md-end me-2"> <i class="fa-solid fa-ban"></i></button>
+                            <button type="submit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="SALVAR" class="btn btn-outline-primary align-middle float-md-end me-2"><i class="fa-solid fa-floppy-disk"></i></button>
+                        </div>
+                    </div>
+                </form><!--Fim do formulario de cadastro-->
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--FIM DO CONTAINER-->
