@@ -45,12 +45,6 @@ namespace PrecisoPRO.Models
 
         public Empresa? Empresa { get; set; }
 
-
-        [Display(Name = "Imagem")]
-        public string? Imagem { get; set; }
-
-
-
         [Display(Name = "Status")]
         [Column("STATUS")]
         public sbyte Status { get; set; }
@@ -75,6 +69,11 @@ namespace PrecisoPRO.Models
         public string? DataAlt
         {
             get { return Data_Alt?.ToShortDateString(); }
+        }
+
+        public bool SenhaValida(string senha)
+        {
+            return Senha == senha;
         }
     }
 }

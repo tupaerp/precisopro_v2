@@ -20,7 +20,6 @@
 <body>
 
     <section class="fixed-top bg-white py-1 " id="Navbartop">
-
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 dropdown-center">
@@ -69,7 +68,6 @@
                             </ul>
                         </li>
                         <!----===== DROPDOWN FIM ===== -->
-
                         <!----===== DROPDOWN INÍCIO ===== -->
                         <li class="nav-item">
                             <a class="nav-link text-white dropdown-toggle borderbutton" type="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">
@@ -83,13 +81,11 @@
                             </ul>
                         </li>
                         <!----===== DROPDOWN FIM ===== -->
-
                         <!----===== IMAGEM PERFIL ===== -->
                         <li class="nav-item ms-auto">
                             <img src="~/lib/IMG/usermobile.png" class="img-fluid" width="40" />
                         </li>
                         <!----===== FIM IMAGEM PERFIL ===== -->
-
                         @*<li class="nav-item p-1 text-center">
                         <a class="nav-link text-white" href="/empresa"><i class='bx bx-bar-chart-alt-2 isize'></i></a>
                         <span class="text-white fs-6">Tabelas</span>
@@ -123,26 +119,10 @@
     <!----===== INÍCIO SIDEBAR ===== -->
     <section>
         <nav class="sidebar close" id="sideclose">
-            <header>
-                <!----===== HEADER IMAGEM USUÁRIO ===== -->
-                <div class="image-text">
-                    <span class="image">
-                        <img src="~/lib/IMG/USUARIO2.png" alt="">
-                    </span>
 
-                    <div class="text logo-text">
-                        <span class="name">Usuário Fulano</span>
-                        <span class="profession bw-dark opacity-75">
-                            <i class='bx bxs-circle text-success py-1'></i>
-                            Online
-                        </span>
-                    </div>
-                </div>
-                <!----===== FIM HEADER IMAGEM USUÁRIO ===== -->
-                <i class='bx bx-chevron-right toggle'></i>
-            </header>
-
-
+            <!----===== DEFAULT  ===== -->
+            @await Component.InvokeAsync("Menu")
+            <!----===== DEFAULT ===== -->
             <!----===== INÍCIO MENU SIDEBAR ===== -->
             <div class="menu-bar">
                 <div class="menu border-top">
@@ -196,10 +176,7 @@
                 <div class="bottom-content">
                     <ul>
                         <li class="">
-
-
-                            <a href="/login" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Sair">
-
+                            <a data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Sair" asp-area="" asp-controller="Login" asp-action="Sair">
                                 <i class='bx bx-log-out icon'></i>
                                 <span class="text nav-text">Sair</span>
                             </a>
@@ -254,7 +231,6 @@
 
 
     <!----===== FIM ATIVAR DICAS ===== -->
-
     <!----===== TESTE ===== -->
     <script>
         $(function () {

@@ -18,6 +18,11 @@ namespace PrecisoPRO.Repository
             db.Add(usuario);
             return Save();
         }
+
+        public Usuario BuscarPorLogin(string login)
+        {
+            return db.Usuarios.FirstOrDefault(x => x.Login.ToUpper() == login.ToUpper());
+        }
         public bool Delete(Usuario usuario)
         {
             db.Remove(usuario);
