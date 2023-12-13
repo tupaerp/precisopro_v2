@@ -12,125 +12,369 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+               @*  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> *@
                 <!--AQUI CONTEUDO DO FORM-->
-                <form method="post" asp-action="Incluir">
+                <form method="post" asp-action="Incluir" id="EmpresaIncluir">
                     <!--Inicio Form de Cadastro-->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <label asp-for="Razao" class="form-label">Razão a Social*</label>
-                            <input asp-for="Razao" class="form-control" placeholder="Digite a Razão Social" onkeyup="maiuscula(this);">
-                            <span asp-validation-for="Razao" class="text-danger"></span>
+                    
+                   <!--TABS-->
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-identificacao-tab" data-bs-toggle="tab" data-bs-target="#nav-identificacao" type="button" role="tab" aria-controls="nav-identificacao" aria-selected="true">Identificação</button>
+                            <button class="nav-link" id="nav-endereco-tab" data-bs-toggle="tab" data-bs-target="#nav-endereco" type="button" role="tab" aria-controls="nav-endereco" aria-selected="false">Endereço</button>
+                            <button class="nav-link" id="nav-infcompl-tab" data-bs-toggle="tab" data-bs-target="#nav-infcompl" type="button" role="tab" aria-controls="nav-infcompl" aria-selected="false">Informações Complementares</button>
+                            <button class="nav-link" id="nav-contador-tab" data-bs-toggle="tab" data-bs-target="#nav-contador" type="button" role="tab" aria-controls="nav-contador" aria-selected="false">Contador</button>
+                            <button class="nav-link" id="nav-contatos-tab" data-bs-toggle="tab" data-bs-target="#nav-contatos" type="button" role="tab" aria-controls="nav-contatos" aria-selected="false">Mais Contatos</button>
+                            <button class="nav-link" id="nav-senhas-tab" data-bs-toggle="tab" data-bs-target="#nav-senhas" type="button" role="tab" aria-controls="nav-senhas" aria-selected="false">Senhas</button>
+                            <button class="nav-link" id="nav-anot-tab" data-bs-toggle="tab" data-bs-target="#nav-anot" type="button" role="tab" aria-controls="nav-anot" aria-selected="false">Anotações</button>
+                            
                         </div>
-                        <div class="col-md-12 mt-3">
-                            <label asp-for="Fantasia" class="form-label">Fantasia*</label>
-                            <input asp-for="Fantasia" class="form-control" placeholder="Digite a Fantasia" onkeyup="maiuscula(this);">
-                            <span asp-validation-for="Fantasia" class="text-danger"></span>
-                        </div>
-                    </div>
-
-                    <div class="row  mt-3">
-                        <div class="col-md-6">
-                            <label asp-for="Cnpj" class="form-label">CNPJ*</label>
-                            <input asp-for="Cnpj" class="form-control" placeholder="Digite o CNPJ">
-                            <span asp-validation-for="Cnpj" class="text-danger"></span>
-                        </div>
-                        <div class="col-md-6">
-                            <label asp-for="Ie" class="form-label">I.E</label>
-                            <input asp-for="Ie" class="form-control" placeholder="Digite a Inscrição " onkeyup="maiuscula(this);">
-
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="row mt-3">
-                        <div class="col-md-2">
-                            <label asp-for="Cep" class="form-label">CEP</label>
-                            <input asp-for="Cep" class="form-control" placeholder="Digite O CEP">
-
-                        </div>
-                        <div class="col-md-4">
-                            <label asp-for="Endereco" class="form-label">Logradouro</label>
-                            <input asp-for="Endereco" class="form-control" placeholder="Digite a Rua, Avenida, Travessa..." onkeyup="maiuscula(this);">
-
-                        </div>
-                        <div class="col-md-4">
-                            <label asp-for="Bairro" class="form-label">Bairro</label>
-                            <input asp-for="Bairro" class="form-control" placeholder="Digite o Bairro" onkeyup="maiuscula(this);">
-
-                        </div>
-                        <div class="col-md-2">
-                            <label asp-for="Numero" class="form-label">Número</label>
-                            <input asp-for="Numero" class="form-control" placeholder="Digite o Número" onkeyup="maiuscula(this);">
-
-                        </div>
-
-
-
-
-                    </div>
-                    <div class="row mt-3 border-bottom">
-                        <div class="col-md-4">
-                            <label asp-for="Cidade" class="form-label">Cidade</label>
-                            <input asp-for="Cidade" class="form-control" placeholder="Digite a Cidade" onkeyup="maiuscula(this);">
-                            <span asp-validation-for="Cidade" class="text-danger"></span>
-                        </div>
-
-                        <div class="col-md-2">
-                            <label asp-for="UF" class="form-label">Estado</label>
-                            <select asp-for="UF" class="form-select text-body-secondary" placeholder="Estado">
-                                <option value="">Escolha a UF</option>
-                                @foreach (var item in ViewBag.Estados)
-                                {
-                                    if (item.Uf == ViewBag.Estado)
-                                    {
-                                        <option selected value="@item.Uf">@item.Uf</option>
-                                    }
-                                    else
-                                    {
-                                        <option value="@item.Uf">@item.Uf</option>
-                                    }
-                                }
-                            </select>
-                            <span asp-validation-for="UF" class="text-danger"></span>
-                        </div>
-                        <div class="col-md-2">
-                            <label asp-for="Telefone" class="form-label">Telefone (Fixo)</label>
-                            <input asp-for="Telefone" class="form-control telefone" placeholder="Digite o Telefone">
-
-                        </div>
-
-                        <div class="col-md-2">
-                            <label asp-for="Celular" class="form-label">Telefone (Cel)</label>
-                            <input asp-for="Celular" class="form-control celular" placeholder="Digite o Celular">
-
-                        </div>
-                        <div class="col-md-2 mb-4">
-                            <label asp-for="Principal" class="form-label">Empresa Principal</label>
-                            <div class="form-check form-check-inline mt-2">
-                                <input asp-for="Principal" class="form-check-input" type="radio" value="1">
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    SIM
-                                </label>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-identificacao" role="tabpanel" aria-labelledby="nav-identificacao-tab" tabindex="0">
+                            <!--identificação-->
+                            <div class="row  mt-2 mb-3">
+                                <div class="col-md-12 border-bottom">
+                                    <span class="fw-medium fs-5">Informações principais</span>
+                                </div>
                             </div>
-                            <div class="form-check form-check-inline">
+                            <div class="row mt-3">
+                               
+                                 <div class="col-md-6">
+                                    <label asp-for="Cnpj" class="form-labelead fw-medium">CNPJ*</label>
+                                    <input asp-for="Cnpj" class="form-control" placeholder="Digite o CNPJ" aria-required="true">
+                                    <span asp-validation-for="Cnpj" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Ie" class="form-label fw-medium">Insc. Estadual</label>
+                                    <input asp-for="Ie" class="form-control" placeholder="Digite a Inscrição Estadual " onkeyup="maiuscula(this);">
 
-                                <input asp-for="Principal" class="form-check-input" type="radio" checked value="0">
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    NÃO
-                                </label>
+                                </div>
+                                
+                               
                             </div>
+
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+
+                                    <label asp-for="Im" class="form-label fw-medium">Insc. Municipal</label>
+                                        <input asp-for="Im" class="form-control" placeholder="Digite a Inscrição Municipal " onkeyup="maiuscula(this);">
+
+                                   
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="NMei" class="form-label fw-medium">Nº MEI</label>
+                                    <input asp-for="NMei" class="form-control" placeholder="Digite o MEI (caso exista)" onkeyup="maiuscula(this);">
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label asp-for="Razao" class="form-label fw-medium">Razão a Social*</label>
+                                    <input asp-for="Razao" class="form-control" placeholder="Digite a Razão Social" onkeyup="maiuscula(this);" aria-required="true">
+                                    <span asp-validation-for="Razao" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Fantasia" class="form-label fw-medium">Fantasia*</label>
+                                    <input asp-for="Fantasia" class="form-control" placeholder="Digite a Fantasia" onkeyup="maiuscula(this);" aria-required="true">
+                                    <span asp-validation-for="Fantasia" class="text-danger"></span>
+                                </div>
+                            </div>
+                           
+                            <div class="row mt-3">
+                               
+                                <div class="col-md-6">
+                                  
+                                    <label asp-for="NatJuridica" class="form-label fw-medium">Natureza Jurídica</label>
+                                    <select asp-for="NatJuridica" class="form-select text-body-secondary" placeholder="Natureza Jurídica">
+                                        <option value="">Escolha a Natureza Jurídica</option>
+                                        @foreach (var item in ViewBag.NatJuridica)
+                                        {
+                                            
+                                                <option value="@item.Id">@item.Nome</option>
+                                          
+                                            
+                                        }
+                                    </select>
+                                  
+
+                                </div>
+                                <div class="col-md-6">
+
+                                    <label asp-for="RegJuridico" class="form-label fw-medium">Regime Jurídico</label>
+                                    <select asp-for="RegJuridico" class="form-select text-body-secondary">
+                                        <option value="">Escolha o Regime Jurídico</option>
+                                        @foreach (var item in ViewBag.RegimeJuridico)
+                                        {
+
+                                            <option value="@item.Id">@item.Nome</option>
+
+
+                                        }
+                                    </select>
+
+
+                                </div>
+                              
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                   
+                                        <label asp-for="AtvPrincipal" class="form-label fw-medium">Principal Atividade Econômica</label>
+                                        <input asp-for="AtvPrincipal" class="form-control" placeholder="Digite a Atividade Econômica principal" onkeyup="maiuscula(this);">
+
+                                   
+                                </div>
+                            </div>
+                          
+                            
+
                         </div>
 
+                        <div class="tab-pane fade" id="nav-endereco" role="tabpanel" aria-labelledby="nav-endereco-tab" tabindex="0">
+                            <!--Endereço principal-->
+                            <div class="row  mt-2 mb-3">
+                                <div class="col-md-12 border-bottom">
+                                    <span class="fw-medium fs-5">Endereço</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label asp-for="Cep" class="form-label fw-medium">CEP</label>
+                                    <input asp-for="Cep" class="form-control" placeholder="Digite O CEP">
+
+                                </div>
+                                <div class="col-md-4">
+                                    <label asp-for="Endereco" class="form-label fw-medium">Logradouro</label>
+                                    <input asp-for="Endereco" class="form-control" placeholder="Digite a Rua, Avenida, Travessa..." onkeyup="maiuscula(this);">
+
+                                </div>
+                                <div class="col-md-4">
+                                    <label asp-for="Numero" class="form-label fw-medium">Número</label>
+                                    <input asp-for="Numero" class="form-control" placeholder="Digite o número (0 para S/N)">
+
+                                </div>
+                               
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-4">
+                                    <label asp-for="Complemento" class="form-label fw-medium">Complemento</label>
+                                    <input asp-for="Complemento" class="form-control" placeholder="Digite o Complemento" onkeyup="maiuscula(this);">
+
+                                </div>
+                                <div class="col-md-4">
+                                    <label asp-for="Bairro" class="form-label fw-medium">Bairro</label>
+                                    <input asp-for="Bairro" class="form-control" placeholder="Digite o Bairro" onkeyup="maiuscula(this);">
+
+                                </div>
+                                <div class="col-md-4">
+                                    <label asp-for="Referencia" class="form-label fw-medium">Referência</label>
+                                    <input asp-for="Referencia" class="form-control" placeholder="Digite a Referência">
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="row mt-3">
+                                <div class="col-md-4">
+                                    <label asp-for="Cidade" class="form-label fw-medium">Cidade</label>
+                                    <input asp-for="Cidade" class="form-control" placeholder="Digite a Cidade" onkeyup="maiuscula(this);">
+                                    <span asp-validation-for="Cidade" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-4">
+                                    <label asp-for="UF" class="form-label fw-medium">Estado</label>
+                                    <select asp-for="UF" class="form-select text-body-secondary">
+                                        <option value=""> Escolha o estado</option>
+                                        @foreach (var item in ViewBag.Estados)
+                                        {
+
+                                            <option value="@item.Uf">@item.Uf</option>
+
+                                        }
+                                    </select>
+                                    <span asp-validation-for="UF" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-4">
+                                    <label asp-for="Email" class="form-label fw-medium">E-mail</label>
+                                    <input asp-for="Email" class="form-control" placeholder="Digite o E-Mail">
+                                </div>
+                                
+                                
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-4">
+                                    <label asp-for="Telefone" class="form-label fw-medium">Telefone (Fixo)</label>
+                                    <input asp-for="Telefone" class="form-control telefone" placeholder="Digite o Telefone">
+                                </div>
+                                <div class="col-md-4">
+                                    <label asp-for="Celular" class="form-label fw-medium">Telefone (Cel)</label>
+                                    <input asp-for="Celular" class="form-control celular" placeholder="Digite o Celular">
+                                </div>
+                               
+                                <div class="col-md-2 mb-4">
+                                    <label asp-for="Principal" class="form-label fw-medium">Empresa Principal</label>
+                                    <div class="form-check form-check-inline mt-2">
+                                        <input asp-for="Principal" class="form-check-input" type="radio" value="1">
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            SIM
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+
+                                        <input asp-for="Principal" class="form-check-input" type="radio" checked value="0">
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            NÃO
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="nav-infcompl" role="tabpanel" aria-labelledby="nav-infcompl-tab" tabindex="0">
+                            <div class="row  mt-2 mb-3">
+                                <div class="col-md-12 border-bottom">
+                                    <span class="fw-medium fs-5">Informações Complementares</span>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label asp-for="SitCadastral" class="form-label fw-medium">Situação Cadastral</label>
+                                    <input asp-for="SitCadastral" class="form-control" placeholder="Digite a Situação Cadastral">
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Nire" class="form-label fw-medium">NIRE</label>
+                                    <input asp-for="Nire" class="form-control telefone" placeholder="Digite o Número de Identificação do Registro de Empresas">
+                                </div>
+                             </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <label asp-for="MotDescCred" class="form-label fw-medium">Motivo do Credenciamento ou Descrendiciamento da Empresa</label>
+                                    <input asp-for="MotDescCred" class="form-control" placeholder="Digite o motivo">
+                                </div>
+                              
+                            </div>
+
+
+
+
+
+                        </div>
+                        <div class="tab-pane fade" id="nav-contador" role="tabpanel" aria-labelledby="nav-contador-tab" tabindex="0">
+                            <!--Contador-->
+                            <div class="row  mt-2 mb-3">
+                                <div class="col-md-12 border-bottom">
+                                    <span class="fw-medium fs-5">Dados do Contador</span>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label asp-for="CrcContador" class="form-label fw-medium">CRC do Contador</label>
+                                    <input asp-for="CrcContador" class="form-control" placeholder="Digite o CRC do Contador">
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="NomeContador" class="form-label fw-medium">Nome do Contador</label>
+                                    <input asp-for="NomeContador" class="form-control" placeholder="Digite o NOME do Contador">
+                                </div>
+
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label asp-for="CrcResponsavel" class="form-label fw-medium">CRC do Responsável</label>
+                                    <input asp-for="CrcResponsavel" class="form-control" placeholder="Digite o CRC do Responsável">
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="NomeResponsavel" class="form-label fw-medium">Nome do Responsável</label>
+                                    <input asp-for="NomeResponsavel" class="form-control" placeholder="Digite o NOME do Responsável">
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="tab-pane fade" id="nav-contatos" role="tabpanel" aria-labelledby="nav-contatos-tab" tabindex="0">
+                          <!--Outros contatos-->
+                            <div class="row  mt-2 mb-3">
+                                <div class="col-md-12 border-bottom">
+                                    <span class="fw-medium fs-5">Outros Contatos</span>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label asp-for="TelAlternativo" class="form-label fw-medium">Telefone Fixo Alterantivo</label>
+                                    <input asp-for="TelAlternativo" class="form-control telefone" placeholder="Digite o Telefone Alternativo">
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="CelAlternativo" class="form-label fw-medium">Telefone Celular Alternativo</label>
+                                    <input asp-for="CelAlternativo" class="form-control celular" placeholder="Digite o Celular Alternativo">
+                                </div>
+
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <label asp-for="EmailAlternativo" class="form-label fw-medium">E-Mail Alternativo</label>
+                                    <input asp-for="EmailAlternativo" class="form-control celular" placeholder="Digite o E-mail Alternativo">
+                                </div>
+                            </div>
+                           
+                        
+                        
+                        
+                        </div>
+
+
+                        <div class="tab-pane fade" id="nav-senhas" role="tabpanel" aria-labelledby="nav-senhas-tab" tabindex="0">
+                            <!--Senhas-->
+                            <div class="row  mt-2 mb-3">
+                                <div class="col-md-12 border-bottom">
+                                    <span class="fw-medium fs-5">Senhas</span>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-4">
+                                    <label asp-for="SenhaDteSefaz" class="form-label fw-medium">Senha DTE Sefaz</label>
+                                    <input asp-for="SenhaDteSefaz" class="form-control celular" placeholder="Digite a Senha do DTE na Sefaz">
+                                </div>
+                                <div class="col-md-4">
+                                    <label asp-for="LoginDteSefaz" class="form-label fw-medium">Login DTE Sefaz</label>
+                                    <input asp-for="LoginDteSefaz" class="form-control celular" placeholder="Digite o Login do DTE na Sefaz">
+                                </div>
+                                <div class="col-md-4">
+                                    <label asp-for="CpfRepresentante" class="form-label fw-medium">CPF do Representante DTE Sefaz</label>
+                                    <input asp-for="CpfRepresentante" class="form-control celular" placeholder="Digite o CPF do Representante do DTE na Sefaz">
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="tab-pane fade" id="nav-anot" role="tabpanel" aria-labelledby="nav-anot-tab" tabindex="0">
+                            <!--Anotações-->
+                            <div class="row  mt-2 mb-3">
+                                <div class="col-md-12 border-bottom">
+                                    <span class="fw-medium fs-5">Anotações pertinentes</span>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <label asp-for="Anotacoes" class="form-label fw-medium">Login DTE Sefaz</label>
+                                    <textarea asp-for="Anotacoes" rows="12" cols="33" class="form-control celular" placeholder="Digite as anotaçõesa que se fizerem pertinentes"></textarea>
+                                </div> 
+                            </div>
+
+                        </div>
+                        
                     </div>
+
+
+
+                    
                     <!--DIV BOTO~ES-->
-                    <div class="row">
-                        <div class="col-md-12 mt-3">
+                    <div class="row border-top mt-3">
+                        <div class="col-md-12 mt-3 ">
 
                             <button type="button" data-bs-dismiss="modal" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="CANCELAR" class="btn btn-outline-danger align-middle float-md-end me-2"> <i class="fa-solid fa-ban"></i></button>
                             <button type="submit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="SALVAR" class="btn btn-outline-primary align-middle float-md-end me-2"><i class="fa-solid fa-floppy-disk"></i></button>
-
 
 
                         </div>

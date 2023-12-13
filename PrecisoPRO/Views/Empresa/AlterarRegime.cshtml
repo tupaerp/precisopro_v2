@@ -1,0 +1,68 @@
+﻿@model PrecisoPRO.Models.Empresa
+@{
+    ViewData["Title"] = "AssociarIndividual";
+    Layout = "~/Views/Shared/_LayoutModais.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="Esqueceu a senha?">Mudar Regime Juridico na Empresa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!--AQUI CONTEUDO DO FORM-->
+                <form method="post" asp-action="AlterarRegime">
+                    <input id="id" name="id" class="form-control" type="hidden" value="@Model.Id" disabled />
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="form-label">CNPJ</label>
+                            <input class="form-control" type="text" value="@Model.Cnpj" disabled />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Razão Social</label>
+                            <input class="form-control" type="text" value="@Model.Razao" disabled />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Fantasia</label>
+                            <input class="form-control" type="text" value="@Model.Fantasia" disabled />
+                        </div>
+
+                    </div>
+
+                    <!--LISTA TODOS OS ESTADOS CADASTRADOS-->
+                    <div class="row mt-2">
+
+                        <label class="form-label">Regimes Jurídicos</label>
+                        <hr class="m-0 mb-2" />
+                        @foreach (var estado in ViewBag.RegimesJuridicos)
+                        {
+                            <div class="col-md-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="checkUf" id="@estado.Uf" value="@estado.Id">
+                                    <label class="form-check-label" for="inlineCheckbox1">@estado.Descricao</label>
+                                </div>
+                            </div>
+
+                        }
+
+
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <button type="submit" class="btn btn-outline-primary align-middle float-md-end me-2"><i class="fa-solid fa-floppy-disk"></i> SALVAR</button>
+
+                        </div>
+                    </div>
+                </form>
+
+                <!--termina aqui: finalizr form-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--FIM DO CONTAINER-->

@@ -12,11 +12,35 @@ build_property.RootNamespace = PrecisoPRO
 build_property.ProjectDir = C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
-build_property.RazorLangVersion = 2.1
+build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/BuscarCNDs/AssociarEmpresa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzY2FyQ05Ec1xBc3NvY2lhckVtcHJlc2EuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/BuscarCNDs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzY2FyQ05Ec1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/Empresa/AlterarRegime.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxBbHRlcmFyUmVnaW1lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/Empresa/AssociarIndividual.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxBc3NvY2lhckluZGl2aWR1YWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/Empresa/Detalhes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxEZXRhbGhlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/Empresa/Incluir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxJbmNsdWlyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/Empresa/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxJbmRleC5jc2h0bWw=
@@ -38,20 +62,40 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/Shared/Components/Menu/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+[C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/Shared/_LayoutLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/Shared/_LayoutModais.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRNb2RhaXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/Usuario/Detalhes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xEZXRhbGhlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/Usuario/Incluir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmNsdWlyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/Usuario/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/Usuario/_TabelaPrincipal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xfVGFiZWxhUHJpbmNpcGFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/_ViewImports.cshtml]
@@ -61,3 +105,7 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/preciso/source/repos/PrecisoPRO/PrecisoPRO/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-8usm6naegy

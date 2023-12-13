@@ -16,7 +16,6 @@ namespace PrecisoPRO.Repository
         }
 
               
-
         public bool Adicionar(Empresa empresa)
         {
             db.Add(empresa);
@@ -31,12 +30,14 @@ namespace PrecisoPRO.Repository
 
         public async Task<IEnumerable<Empresa>> GetAll()
         {
-            return await db.Empresas.ToListAsync();
+            return await db.Empresas.Include(i=>i.RegimeJuridico).ToListAsync();
         }
 
         public async Task<IEnumerable<Empresa>> GetAllAsyncNoTracking()
         {
-            return await db.Empresas.AsNoTracking().OrderBy(x => x.Id).ToListAsync();
+            //return await db.Empresas.AsNoTracking().OrderBy(x => x.Id).ToListAsync();
+            return await db.Empresas.Include(i=>i.RegimeJuridico).AsNoTracking().OrderBy(x => x.Id).ToListAsync();
+
         }
 
         public async Task<Empresa> GetByIdAsync(int id)
@@ -47,6 +48,7 @@ namespace PrecisoPRO.Repository
         public async Task<Empresa> GetByIdAsyncNoTracking(int id)
         {
             return await db.Empresas.AsNoTracking().FirstOrDefaultAsync(i => i.Id == id);
+           
         }
 
         public async Task<IEnumerable<Empresa>> GetEmpresaByCity(string cidade)

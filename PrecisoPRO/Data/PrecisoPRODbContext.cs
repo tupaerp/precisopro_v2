@@ -18,6 +18,11 @@ namespace PrecisoPRO.Data
 
        public DbSet<AssociarEmpUf> AssociarEmpresasUf { get; set; }
 
+        public DbSet<NaturezaJuridica> NatJuridicas { get; set; }
+
+        public DbSet<RegimeJuridico> RegimeJuridicos { get; set; }
+
         public DbSet<CndUfViewModel> CndsUf { get; set; }
+       
     }
 }

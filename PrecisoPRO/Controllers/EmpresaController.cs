@@ -4,25 +4,35 @@ using PrecisoPRO.Models;
 using PrecisoPRO.Models.ViewModels;
 using PrecisoPRO.Services;
 using System.Data;
+using System.Drawing;
 using X.PagedList;
 
 namespace PrecisoPRO.Controllers
 {
     public class EmpresaController : Controller
     {
+       
         //contexto do banco de dados
         private readonly IEmpresaRepository _empresaRepository;
         private readonly IEstadoRepository _estadoRepository;
         private readonly IAssociarEmpUf _associarEmpUf;
+        private readonly INatJuridica _natJuridica;
+        private readonly IRegimeJuridico _regimeJuridico;
+
+
         IEnumerable<Empresa>? listaEmpresas; //Lista enumerada
         IEnumerable<Estado>? listaEstados; //lista de estados
+        IEnumerable<NaturezaJuridica>? listaNatJuridica; //lista as naturezas juridicas
         IEnumerable<AssociarEmpUf>? listaAssociarEmpUF;
+        IEnumerable<RegimeJuridico>? listaRegimeJuridicos;
         int contSalvos = 0;
-        public EmpresaController(IEmpresaRepository empresaRepository, IEstadoRepository estadoRepository, IAssociarEmpUf associarEmpUf)
+        public EmpresaController(IEmpresaRepository empresaRepository, IEstadoRepository estadoRepository, IAssociarEmpUf associarEmpUf, INatJuridica natJuridica, IRegimeJuridico regJuridico)
         {
             _empresaRepository = empresaRepository;
             _estadoRepository = estadoRepository;
             _associarEmpUf = associarEmpUf;
+            _natJuridica = natJuridica;
+            _regimeJuridico = regJuridico;
 
 
         }   
@@ -30,6 +40,7 @@ namespace PrecisoPRO.Controllers
         {
             this.listaEmpresas = await _empresaRepository.GetAllAsyncNoTracking();
             this.listaEstados = await _estadoRepository.GetAllAsyncNoTracking();
+            this.listaRegimeJuridicos = await _regimeJuridico.GetAllAsyncNoTracking();
             if (cnpj != null)
             {
                 this.listaEmpresas = this.listaEmpresas.Where(x => x.Cnpj.Contains(cnpj)).ToList();
@@ -62,7 +73,7 @@ namespace PrecisoPRO.Controllers
            
             //Busca os Estados
             ViewBag.Estados = this.listaEstados.ToList();
-
+            ViewBag.RegimesJuridicos = this.listaRegimeJuridicos.ToList();
             //passa inicialmente dois parametros, o numero da pagina e o tamanho da página
             return View(this.listaEmpresas.ToPagedList(numPagina, 8));
         }
@@ -71,8 +82,12 @@ namespace PrecisoPRO.Controllers
         public async Task<IActionResult> Incluir()
         {
             this.listaEstados = await _estadoRepository.GetAllAsyncNoTracking();
+            this.listaNatJuridica = await _natJuridica.GetAllAsyncNoTracking();
+            this.listaRegimeJuridicos = await _regimeJuridico.GetAllAsyncNoTracking();
             //Busca os Estados
             ViewBag.Estados = this.listaEstados.ToList();
+            ViewBag.NatJuridica = this.listaNatJuridica.ToList();
+            ViewBag.RegimeJuridico = this.listaRegimeJuridicos.ToList();
             return View();
         }
 
@@ -85,19 +100,41 @@ namespace PrecisoPRO.Controllers
                
                 var empresa = new Empresa
                 {
-                    Cnpj = empresaVM.Cnpj,
                     Ie = empresaVM.Ie,
+                    Im = empresaVM.Im,
+                    Cnpj = empresaVM.Cnpj,
                     Razao = empresaVM.Razao,
+                    NMei = empresaVM.NMei,
                     Fantasia = empresaVM.Fantasia,
+                    NatJuridica = empresaVM.NatJuridica,
+                    RegJuridico = empresaVM.RegJuridico,
+                    AtvPrincipal = empresaVM.AtvPrincipal,
                     Cep = empresaVM.Cep,
                     Endereco = empresaVM.Endereco,
                     Numero = empresaVM.Numero,
+                    Complemento = empresaVM.Complemento,
+                    Bairro = empresaVM.Bairro,
                     Cidade = empresaVM.Cidade,
                     UF = empresaVM.UF,
+                    Referencia = empresaVM.Referencia,
+                    Principal = empresaVM.Principal,
                     Telefone = empresaVM.Telefone,
                     Celular = empresaVM.Celular,
-                    Principal = empresaVM.Principal,
-                    Status = 1,
+                    Email = empresaVM.Email,
+                    SitCadastral = empresaVM.SitCadastral,
+                    MotDescCred = empresaVM.MotDescCred,
+                    Nire = empresaVM.Nire,
+                    NomeContador = empresaVM.NomeContador,
+                    CrcContador = empresaVM.CrcContador,
+                    NomeResponsavel = empresaVM.NomeResponsavel,
+                    CrcResponsavel = empresaVM.CrcResponsavel,
+                    TelAlternativo = empresaVM.TelAlternativo,
+                    CelAlternativo = empresaVM.CelAlternativo,
+                    EmailAlternativo = empresaVM.EmailAlternativo,
+                    LoginDteSefaz = empresaVM.LoginDteSefaz,
+                    SenhaDteSefaz = empresaVM.SenhaDteSefaz,
+                    CpfRepresentante = empresaVM.CpfRepresentante,
+                    Anotacoes = empresaVM.Anotacoes,
                     Data_Cad = DateTime.Now,
                     Data_Alt = DateTime.Now
 
@@ -122,9 +159,51 @@ namespace PrecisoPRO.Controllers
                 ModelState.AddModelError("", "ERRO");
             }
             this.listaEstados = await _estadoRepository.GetAllAsyncNoTracking();
+            this.listaNatJuridica = await _natJuridica.GetAllAsyncNoTracking();
+            this.listaRegimeJuridicos = await _regimeJuridico.GetAllAsyncNoTracking();
             //Busca os Estados
             ViewBag.Estados = this.listaEstados.ToList();
+            ViewBag.NatJuridica = this.listaNatJuridica.ToList();
+            ViewBag.RegimeJuridico = this.listaRegimeJuridicos.ToList();
             return View(empresaVM);
+        }
+
+        public async Task<IActionResult>AlterarRegime(int id, string regimeNome)
+        {
+            //Seleciona a Empresa pelo ID e cria um objeto dela
+            Empresa empresa = await _empresaRepository.GetByIdAsync(id);
+
+            //Carrega a lista de Regimejuridico
+            this.listaRegimeJuridicos = await _regimeJuridico.GetAllAsyncNoTracking();
+
+            //Asssocia o valor do parametro a uma variavel
+            string regime = regimeNome;
+
+            //Busca o objeto em forma de var do regime juridico
+            var regimeJuridico = this.listaRegimeJuridicos.FirstOrDefault(r => r.Nome == regimeNome);
+
+            //verifica o retorno e associa a variavel idregime
+            if(regimeJuridico != null)
+            {
+                int regimeId = regimeJuridico.Id;
+                empresa.RegJuridico = regimeId;
+            }
+
+            try
+            {
+                _empresaRepository.Update(empresa);
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                TempData["Error"] = "Probelmas ao salvar o registro, tente novamente";
+                return RedirectToAction("Index");
+            }
+
+
+            ViewBag.RegimesJuridicos = this.listaRegimeJuridicos.ToList();
+
+            return View(empresa);
         }
         public async Task<IActionResult> AssociarIndividual(int id)
         {
@@ -133,6 +212,7 @@ namespace PrecisoPRO.Controllers
 
             //Busca os Estados
             ViewBag.Estados = this.listaEstados.ToList();
+         
             return View(empresa);
         }
 
@@ -204,6 +284,11 @@ namespace PrecisoPRO.Controllers
             ViewBag.Estados = this.listaEstados.ToList();
 
             return View("Index");
+        }
+        public async Task<IActionResult> Detalhes()
+        {
+            this.listaEmpresas = await _empresaRepository.GetAll();
+            return PartialView();
         }
     }
 }

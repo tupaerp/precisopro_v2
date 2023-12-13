@@ -12,8 +12,6 @@ C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\Humanizer
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\K4os.Compression.LZ4.dll
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\K4os.Compression.LZ4.Streams.dll
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\K4os.Hash.xxHash.dll
-C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\Microsoft.AspNetCore.JsonPatch.dll
-C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\Microsoft.Build.dll
@@ -48,7 +46,6 @@ C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\MySql.Dat
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\MySql.EntityFrameworkCore.dll
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\MySqlConnector.dll
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\Newtonsoft.Json.dll
-C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\Newtonsoft.Json.Bson.dll
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\NuGet.Common.dll
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\NuGet.Configuration.dll
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\NuGet.DependencyResolver.Core.dll
@@ -58,8 +55,6 @@ C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\NuGet.Pac
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\NuGet.ProjectModel.dll
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\NuGet.Protocol.dll
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\NuGet.Versioning.dll
-C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\PagedList.dll
-C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\PagedList.Mvc.dll
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\System.CodeDom.dll
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\System.Composition.AttributedModel.dll
@@ -238,3 +233,19 @@ C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\obj\Release\net7.0\refint\Pr
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\obj\Release\net7.0\PrecisoPRO.pdb
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\obj\Release\net7.0\PrecisoPRO.genruntimeconfig.cache
 C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\obj\Release\net7.0\ref\PrecisoPRO.dll
+C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\PrecisoPRO.staticwebassets.runtime.json
+C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\JetBrains.Annotations.dll
+C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\dotnet-aspnet-codegenerator-design.dll
+C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\X.PagedList.dll
+C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\bin\Release\net7.0\X.PagedList.Mvc.Core.dll
+C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\obj\Release\net7.0\PrecisoPRO.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\obj\Release\net7.0\staticwebassets.build.json
+C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\obj\Release\net7.0\staticwebassets.development.json
+C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\obj\Release\net7.0\staticwebassets\msbuild.PrecisoPRO.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\obj\Release\net7.0\staticwebassets\msbuild.build.PrecisoPRO.props
+C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\obj\Release\net7.0\staticwebassets\msbuild.buildMultiTargeting.PrecisoPRO.props
+C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\obj\Release\net7.0\staticwebassets\msbuild.buildTransitive.PrecisoPRO.props
+C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\obj\Release\net7.0\staticwebassets.pack.json
+C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\obj\Release\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\obj\Release\net7.0\scopedcss\bundle\PrecisoPRO.styles.css
+C:\Users\preciso\source\repos\PrecisoPRO\PrecisoPRO\obj\Release\net7.0\scopedcss\projectbundle\PrecisoPRO.bundle.scp.css

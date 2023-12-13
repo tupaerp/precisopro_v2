@@ -50,21 +50,23 @@ jQuery(function ($) {
     $("#campoTelefone").mask("(999) 999-9999");
 
 });
-//function chamarIncluir() {
+function chamarIncluir() {
 
-//    var cont = document.querySelector(".pro-titulo"); //pega o titulo
+    var cont = document.querySelector(".pro-titulo"); //pega o titulo
 
-//    var controller = cont.innerText;
+    var controller = cont.innerText;
 
   
 
-//    $("#modal").load("/" + controller + "/Incluir/", function () {
+    $("#modal").load("/" + controller + "/Incluir/", function () {
 
-//        $('#modal').modal("show");
+        $('#modal').modal("show");
 
-//    });
-//}
+    });
+}
 
+
+//obsoleto, so esta aqui para documentação
 function chamarAssociar() {
 
     var cont = document.querySelector(".pro-titulo"); //pega o titulo
@@ -91,6 +93,7 @@ function chamarAssociarIndividual(id) {
 
     });
 }
+//fim obsoleto
 
 //FECHAR O ALERT APOS A MENSAGEM
 $(document).ready(function () {
@@ -101,4 +104,25 @@ $(document).ready(function () {
         });
 
     }, 5000);
+});
+
+$(document).ready(function () {
+
+    
+    $('#EmpresaIncluir').on('submit', function (e) {
+        $.each($('input[aria-required="true"]'), function () {
+            if (!this.value || this.value == '') {
+
+
+                               
+                alert('Há campos obrigatórios sem preenchimento, verifique todas as abas!');
+                e.preventDefault();
+                return false;
+            }
+        });
+    });
+
+
+
+
 });

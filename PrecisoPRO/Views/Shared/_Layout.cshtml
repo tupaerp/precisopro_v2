@@ -96,28 +96,7 @@
                         </li>
                         <!----===== FIM IMAGEM PERFIL ===== -->
 
-                        @*<li class="nav-item p-1 text-center">
-                        <a class="nav-link text-white" href="/empresa"><i class='bx bx-bar-chart-alt-2 isize'></i></a>
-                        <span class="text-white fs-6">Tabelas</span>
-                        </li>
-                        <li class="nav-item p-1 text-center">
-                        <a class="nav-link text-white" href="/empresa"><i class='bx bx-add-to-queue isize'></i></a>
-                        <span class="text-white fs-6">Cadastrar</span>
-                        </li>
-                        <li class="nav-item p-1 text-center">
-                        <a class="nav-link text-white" href="/empresa"><i class='bx bx-add-to-queue isize'></i></a>
-                        <span class="text-white fs-6">Cadastrar</span>
-                        </li>
-                        <li class="nav-item p-4">
-                        <img src="~/lib/IMG/ESTATISTICA.png" class="img-fluid py-2" width="40" />
-                        </li>
-                        <li class="nav-item p-4">
-                        <img src="~/lib/IMG/ADICIONAR.png" class="img-fluid py-1" width="40" />
-                        </li>
-                        <li class="nav-item p-4">
-
-                        <img src="~/lib/IMG/NOTIFICACAO.png" class="img-fluid" width="40" />
-                        </li> *@
+                      
 
                     </ul>
 
@@ -129,26 +108,10 @@
     <!----===== INÍCIO SIDEBAR ===== -->
     <section>
         <nav class="sidebar close" id="sideclose">
-            <header>
-                <!----===== HEADER IMAGEM USUÁRIO ===== -->
-                <div class="image-text">
-                    <span class="image">
-                        <img src="~/lib/IMG/USUARIO2.png" alt="">
-                    </span>
-
-                    <div class="text logo-text">
-                        <span class="name">Usuário Fulano</span>
-                        <span class="profession bw-dark opacity-75">
-                            <i class='bx bxs-circle text-success py-1'></i>
-                            Online
-                        </span>
-                    </div>
-                </div>
-                <!----===== FIM HEADER IMAGEM USUÁRIO ===== -->
-                <i class='bx bx-chevron-right toggle'></i>
-            </header>
-
-
+            <!----===== DEFAULT  ===== -->
+            @await Component.InvokeAsync("Menu")
+            <!----===== DEFAULT ===== -->
+            <!----===== INÍCIO MENU SIDEBAR ===== -->
             <!----===== INÍCIO MENU SIDEBAR ===== -->
             <div class="menu-bar">
                 <div class="menu border-top">
@@ -173,14 +136,9 @@
                         </li>
 
                         <li class="nav-link">
-
-
-                           @*  <a href="/empresa" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Empresa"> *@
+                                                     
                              <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Cadastrar Empresa" asp-controller="Empresa" asp-action="Index">
                                 <i class="fa-regular fa-building  icon"></i>
-                                
-                                 @* <i class='bx bx-bar-chart-alt-2 icon'></i> *@
-                                
                                 <span class="text nav-text fs-6_5">Cadastrar Empresas</span>
                             </a>
                         </li>
@@ -188,7 +146,6 @@
 
                         <li class="nav-link">
                             <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Cadastrar Usuário" asp-controller="Usuario" asp-action="Index">
-                             @*    <i class='bx bx-add-to-queue icon'></i> *@
                                 <i class="fa-regular fa-user icon"></i>
                                 <span class="text nav-text fs-6_5">Cadastrar Usuários</span>
                             </a>
@@ -196,8 +153,6 @@
 
                         <li class="nav-link">
                             <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Configurar CND's" asp-controller="Buscarcnds" asp-action="Index">
-                                @*    <i class='bx bx-add-to-queue icon'></i> *@
-                              
                                 <i class="fa-solid fa-laptop-file icon"></i>
                                 <span class="text nav-text fs-6_5">Configurar CNDs</span>
                             </a>
@@ -339,16 +294,7 @@
         window.addEventListener('resize', verificarLarguraDaTela);
     </script>
     <!----===== FIM SCRIPT PARA RESPONSIVIDADE ===== -->
-    @*
-    <script>
-    $(document).ready(function () {
-    // Adiciona um ouvinte de eventos ao botão de alternância da barra lateral
-    $('.toggle').click(function () {
-    $('.sidebar').toggleClass('open');
-    $('.content-main').toggleClass('open');
-    });
-    });
-    </script> *@
+   
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
