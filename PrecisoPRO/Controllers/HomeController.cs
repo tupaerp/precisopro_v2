@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
+using PrecisoPRO.Filters;
 using PrecisoPRO.Models;
 using System.Diagnostics;
 
 namespace PrecisoPRO.Controllers
 {
+    [PaginaParaUsuarioLogado]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

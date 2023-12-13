@@ -1,4 +1,5 @@
-﻿﻿@{
+﻿@model LoginModel
+﻿@{
     Layout = "_LayoutLogin";
     ViewData["Title"] = "Login";
 }
@@ -20,33 +21,53 @@
                     <img src="~/lib/IMG/LUPA PRECISO PRO.png" id="lupa" class="img-fluid" alt="Lupa" width="500">
                 </div>
                 <!--CARD-->
-                <div class="col-md-4 px-3" style="max-width: 33rem;">
+                <div class="col-md-4 px-3" style="max-width: 38rem;">
                     <div class="card border-0">
                         <div class="card-body">
                             <div class="text-center pt-4">
                                 <!--LOGO-->
                                 <img src="~/lib/IMG/LOGO TOP.png" class="img-fluid" alt="logo" width="300">
 
-                                <!--INPUT DE E-MAIL -->
-                                <div class="form-floating opacity-75 mt-5">
-                                    <input type="email" id="floatingInput" class="form-control input-login"
-                                           placeholder="nome@exemplo.com">
-                                    <label for="floatingInput"><i class="bi bi-person"></i> Usuario ou E-mail</label>
-                                </div>
 
-                                <!--INPUT DE SENHA -->
-                                <div class="form-floating opacity-75 mt-4">
-                                    <input type="password" id="floatingPassword" class="form-control input-login"
-                                           placeholder="Senha">
-                                    <label for="floatingPassword"><i class="bi bi-lock"></i> Senha</label>
-                                </div>
-                                <!--BOTÃO ENTRAR -->
-                                <div class="text-center p-3 mt-2">
-                                    <a href="/home" class="col-md-10 btn text-center text-white"
-                                       style="background-color: #953534;" type="submit">
-                                        <h3>Entrar</h3>
-                                    </a>
-                                </div>
+
+                                <form asp-controller="Login" asp-action="Entrar" method="post">
+
+                                    <!--INPUT DE E-MAIL -->
+
+                                    <div class="form-floating opacity-75 mt-4">
+                                        <input type="text" asp-for="Login" class="form-control" id="login" />
+                                        <label for="login"><i class="bi bi-lock"></i> Login</label>
+                                        <span asp-validation-for="Login" class="text-danger"></span>
+                                    </div>
+
+                                    <!--INPUT DE SENHA -->
+
+                                    <div class="form-floating opacity-75 mt-4">
+                                        <input type="password" asp-for="Senha" class="form-control" id="senha" />
+                                        <label for="senha"><i class="bi bi-lock"></i> Senha</label>
+                                        <span asp-validation-for="Senha" class=" text-danger"></span>
+                                    </div>
+
+
+                                    <!--BOTÃO ENTRAR -->
+                                    <div class=" text-center p-3 mt-2">
+
+                                        <button class="btn col-md-10 text-center text-white"
+                                                style="background-color: #953534;" type="submit">
+                                            <h3>Entrar</h3>
+                                        </button>
+
+                                    </div>
+                                    @if (TempData["Error"] != null)
+                                    {
+                                        
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <strong><i class="fa-solid fa-xmark fs-4 text-white"></i> </strong>  @TempData["Error"]
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                    
+                                    }
+                                </form>
 
                                 <!-- BOTÃO MODAL ESQUECEU A SENHA -->
                                 <div class="form-group text-center">
@@ -99,5 +120,5 @@
             </div>
         </div>
     </section>
-
 </body>
+

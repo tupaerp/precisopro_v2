@@ -22,26 +22,26 @@
                         <div class="row">
                             @if (TempData["Error"] != null)
                             {
-                               
+
                                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
                                     <strong><i class="fa-solid fa-xmark fs-4"></i> </strong>  @TempData["Error"]
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
 
-                              
+
                             }
                             @if (TempData["Success"] != null)
                             {
-                               
+
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                                     <strong><i class="fa-regular fa-thumbs-up fs-4"></i></strong> @TempData["Success"]
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
 
-                                
+
                             }
                         </div>
-                        <form  asp-controller="Empresa" asp-action="index" class="col-md-12">
+                        <form asp-controller="Empresa" asp-action="index" class="col-md-12">
                             <!--campos-->
                             <div class="row g-2">
                                 <div class="col-md-3">
@@ -61,17 +61,17 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="razao" class="form-label">Razão</label>
-                                    @if(ViewBag.Razao == null)
+                                    @if (ViewBag.Razao == null)
                                     {
                                         @Html.TextBox("razao", null, new { @class = "form-control", onkeyup = "maiuscula(this);", placeholder = "Digite a Razão Social" })
                                     }
                                     else
                                     {
-                                    @Html.TextBox("razao", (string)ViewBag.Razao, new { @class = "form-control", onkeyup = "maiuscula(this);", placeholder = "Digite a Razão Social" })
+                                        @Html.TextBox("razao", (string)ViewBag.Razao, new { @class = "form-control", onkeyup = "maiuscula(this);", placeholder = "Digite a Razão Social" })
                                     }
- 
-               
-               
+
+
+
 
                                 </div>
                                 <div class="col-md-3">
@@ -84,16 +84,16 @@
                                     {
                                         @Html.TextBox("fantasia", (string)ViewBag.Fantasia, new { @class = "form-control", onkeyup = "maiuscula(this);", placeholder = "Digite a Fantasia" })
                                     }
-                              
+
                                 </div>
-                               
+
 
 
                             </div>
                             <div class="row g-2 align-items-center mt-1">
                                 <div class="col-md-4">
                                     <label for="fantasia" class="form-label">Cidade</label>
-                                  
+
                                     @if (ViewBag.Cidade == null)
                                     {
                                         @Html.TextBox("cidade", null, new { @class = "form-control", onkeyup = "maiuscula(this);", placeholder = "Digite a Cidade" })
@@ -121,23 +121,22 @@
                                         }
                                     </select>
 
-                                    
+
                                 </div>
                                 <div id="botoes-acao" class="col-md-6" style="margin-top:2.5rem !important;">
-                                   
-                                     <div>
-                                          <a onclick="chamarIncluir()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Novo Registro" class="btn btn-outline-success align-middle float-lg-end me-2"><i class="fa-solid fs-6 fa-plus"></i></a>
-                                           <button type="submit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Buscar" class="btn btn-outline-primary align-middle float-md-end me-2"><i class="fa-solid fa-magnifying-glass"></i></button>
-                                           <button type="submit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Baixar" class="btn btn-outline-secondary align-middle float-md-end me-2"> <i class="fa-solid fa-download"></i></button>
-                                           <a onclick="limparInputs()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Limpar" class="btn btn-outline-warning align-middle float-md-end me-2"><i class="fa-solid fa-broom"></i></a>
 
-                                     </div>
-                                   
+                                    <div>
+                                        <a onclick="chamarIncluir()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Novo Registro" class="btn btn-outline-success align-middle float-lg-end me-2"><i class="fa-solid fs-6 fa-plus"></i></a>
+                                        <button type="submit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Buscar" class="btn btn-outline-primary align-middle float-md-end me-2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                        <button type="submit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Baixar" class="btn btn-outline-secondary align-middle float-md-end me-2"> <i class="fa-solid fa-download"></i></button>
+                                        <a onclick="limparInputs()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Limpar" class="btn btn-outline-warning align-middle float-md-end me-2"><i class="fa-solid fa-broom"></i></a>
+
+                                    </div>
                                 </div>
 
                             </div>
 
-                         
+
                         </form><!--fim linha busca-->
                     </div>
                     <!--Linha para tabela-->
@@ -165,7 +164,8 @@
                                                  razao = ViewBag.Razao,
                                                  cidade = ViewBag.Cidade,
                                                  fantasia = ViewBag.Fantasia,
-                                                 estado = ViewBag.Estado
+                                                 estado = ViewBag.Estado,
+                                                 cnpj = ViewBag.Cnpj
                                              }),
                                              new PagedListRenderOptions()
                                     {
@@ -188,11 +188,10 @@
 
 </div>
 
-  <section>
-      <!-- MODAL-->
-      <div class="modal fade" id="modal"   aria-hidden="true">
-        
-      </div>
-  </section>
- 
+<section>
+    <!-- MODAL-->
+    <div class="modal fade" id="modal" aria-hidden="true">
+    </div>
+</section>
+
 

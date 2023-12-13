@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PrecisoPRO.Filters;
 using PrecisoPRO.Interfaces;
 using PrecisoPRO.Models;
 using PrecisoPRO.Models.ViewModels;
-using PrecisoPRO.Repository;
 using X.PagedList;
 
 namespace PrecisoPRO.Controllers
 {
+    [PaginaParaUsuarioLogado]
     public class UsuarioController : Controller
     {
         private readonly IUsuarioRepository _usuarioRepository;
@@ -84,9 +85,23 @@ namespace PrecisoPRO.Controllers
             ViewBag.Empresas = this.listaEmpresas.ToList();
             return View(usuarioVM);
         }
-        public async Task<IActionResult> Detalhes()
+        [HttpPost]
+        public IActionResult Entrar(LoginModel loginModel)
         {
-            return View();
+            try
+            {
+                if (ModelState.IsValid)
+                {
+
+                }
+                return View("Index");
+
+            }
+            catch (Exception)
+            {
+                TempData["MessageErro"] = "Houve um erro";
+                return RedirectToAction("Index");
+            }
         }
     }
 }

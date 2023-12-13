@@ -1,13 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PrecisoPRO.Filters;
 using PrecisoPRO.Interfaces;
 using PrecisoPRO.Models;
 using PrecisoPRO.Models.ViewModels;
-using PrecisoPRO.Services;
+using PrecisoPRO.Repository;
 using System.Data;
 using X.PagedList;
 
 namespace PrecisoPRO.Controllers
 {
+    [PaginaParaUsuarioLogado]
     public class EmpresaController : Controller
     {
         //contexto do banco de dados
@@ -15,17 +17,18 @@ namespace PrecisoPRO.Controllers
         private readonly IEstadoRepository _estadoRepository;
         IEnumerable<Empresa>? listaEmpresas; //Lista enumerada
         IEnumerable<Estado>? listaEstados; //lista de estados
-       
+
         public EmpresaController(IEmpresaRepository empresaRepository, IEstadoRepository estadoRepository)
         {
             _empresaRepository = empresaRepository;
             _estadoRepository = estadoRepository;
-                                   
-        }   
-        public async Task<IActionResult> Index(string cnpj, string razao, string cidade, string fantasia, string estado, int numPagina = 1) 
+
+        }
+        public async Task<IActionResult> Index(string cnpj, string razao, string cidade, string fantasia, string estado, int numPagina = 1)
         {
-            this.listaEmpresas = await _empresaRepository.GetAllAsyncNoTracking();
+            this.listaEmpresas = await _empresaRepository.GetAll();
             this.listaEstados = await _estadoRepository.GetAllAsyncNoTracking();
+
             if (cnpj != null)
             {
                 this.listaEmpresas = this.listaEmpresas.Where(x => x.Cnpj.Contains(cnpj)).ToList();
@@ -34,10 +37,10 @@ namespace PrecisoPRO.Controllers
 
             if (razao != null)
             {
-                this.listaEmpresas = this.listaEmpresas.Where(x=>x.Razao.Contains(razao)).ToList();
+                this.listaEmpresas = this.listaEmpresas.Where(x => x.Razao.Contains(razao)).ToList();
                 ViewBag.Razao = razao;
             }
-            if(cidade != null)
+            if (cidade != null)
             {
                 this.listaEmpresas = this.listaEmpresas.Where(x => x.Cidade.Contains(cidade)).ToList();
                 ViewBag.Cidade = cidade;
@@ -47,15 +50,15 @@ namespace PrecisoPRO.Controllers
                 this.listaEmpresas = this.listaEmpresas.Where(x => x.Fantasia.Contains(fantasia)).ToList();
                 ViewBag.Fantasia = fantasia;
             }
-           
-           
-            if(estado !=null && estado != "")
+
+
+            if (estado != null && estado != "")
             {
                 this.listaEmpresas = this.listaEmpresas.Where(x => x.UF.Contains(estado)).ToList();
                 ViewBag.Estado = estado;
             }
-           
-           
+
+
             //Busca os Estados
             ViewBag.Estados = this.listaEstados.ToList();
 
@@ -78,7 +81,7 @@ namespace PrecisoPRO.Controllers
 
             if (ModelState.IsValid)
             {
-               
+
                 var empresa = new Empresa
                 {
                     Cnpj = empresaVM.Cnpj,
@@ -105,13 +108,13 @@ namespace PrecisoPRO.Controllers
                     TempData["Success"] = "Registro SALVO com sucesso";
                     return RedirectToAction("Index");
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     TempData["Error"] = "Probelmas ao salvar o registro, tente novamente";
                     return RedirectToAction("Index");
                 }
-               
-                
+
+
             }
             else
             {
@@ -121,6 +124,12 @@ namespace PrecisoPRO.Controllers
             //Busca os Estados
             ViewBag.Estados = this.listaEstados.ToList();
             return View(empresaVM);
+        }
+
+        public async Task<IActionResult> Detalhes()
+        {
+            this.listaEmpresas = await _empresaRepository.GetAll();
+            return PartialView();
         }
     }
 }

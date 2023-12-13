@@ -1,22 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PrecisoPRO.Filters;
 using PrecisoPRO.Interfaces;
 using PrecisoPRO.Models;
 using PrecisoPRO.Models.ViewModels;
 
 namespace PrecisoPRO.Controllers
 {
+    [PaginaParaUsuarioLogado]
     public class BuscarCNDs : Controller
     {
         //contexto do banco de dados
         private readonly IEmpresaRepository _empresaRepository;
+
         private readonly IEstadoRepository _estadoRepository;
         private readonly ICndUf _emitirCndUf;
         private readonly IAssociarEmpUf _associarEmpUf;
-        IEnumerable<Empresa>? listaEmpresas; //Lista enumerada
-        IEnumerable<Estado>? listaEstados; //lista de estados
-        IEnumerable<CndUfViewModel>? listaEmissaoCndUF; //lista as cnd que precisam ser emitidas por cada estado pela empresa
-        IEnumerable<AssociarEmpUf>? listaAssociarEmpUF;
-        int contSalvos = 0;
+        private IEnumerable<Empresa>? listaEmpresas; //Lista enumerada
+        private IEnumerable<Estado>? listaEstados; //lista de estados
+        private IEnumerable<CndUfViewModel>? listaEmissaoCndUF; //lista as cnd que precisam ser emitidas por cada estado pela empresa
+        private IEnumerable<AssociarEmpUf>? listaAssociarEmpUF;
+        private int contSalvos = 0;
 
         //CONSTRUTOR
         public BuscarCNDs(IEmpresaRepository empresaRepository, IEstadoRepository estadoRepository, ICndUf emitirCndUf, IAssociarEmpUf associarEmpUf)
@@ -26,11 +29,11 @@ namespace PrecisoPRO.Controllers
             _emitirCndUf = emitirCndUf;
             _associarEmpUf = associarEmpUf;
         }
-        public async Task<IActionResult> Index(string cnpj, string ie, string  finalidade="CADASTRO")
+
+        public async Task<IActionResult> Index(string cnpj, string ie, string finalidade = "CADASTRO")
         {
             this.listaEmissaoCndUF = await _emitirCndUf.GetAllAsyncNoTracking();
             this.listaEstados = await _estadoRepository.GetAllAsyncNoTracking();
-
 
             var grupos = this.listaEmissaoCndUF.GroupBy(e => e.UFEstado); //organiza pela UF da tabela estado
 
@@ -46,7 +49,6 @@ namespace PrecisoPRO.Controllers
                 contagemPorEstado.Add(new Tuple<string, int>(estado, quantidade));
             }
 
-           
             ViewBag.ContagemPorEstado = contagemPorEstado;
             ViewBag.Estados = this.listaEstados.ToList();
 
@@ -62,15 +64,12 @@ namespace PrecisoPRO.Controllers
             ViewBag.Empresas = this.listaEmpresas.ToList();
             ViewBag.Estados = this.listaEstados.ToList();
             return View();
-        
         }
 
         [HttpPost]
         public async Task<IActionResult> AssociarEmpresa(CndUfViewModel? associarEmpresa, List<string> checkUf)
         {
             this.listaAssociarEmpUF = await _associarEmpUf.GetAllAsyncNoTracking();
-
-          
 
             if (ModelState.IsValid)
             {
@@ -80,7 +79,6 @@ namespace PrecisoPRO.Controllers
                     //buscar peplo id da empresa
                     var jaExisteUf = this.listaAssociarEmpUF.Where(x => x.IdEstado.Equals(int.Parse(valorCheckbox)) && x.IdEmpresa.Equals(associarEmpresa.IdEmpresa)).ToList();
 
-                  
                     if (jaExisteUf.Count == 0)
                     {
                         var associar = new AssociarEmpUf
@@ -94,21 +92,17 @@ namespace PrecisoPRO.Controllers
                         {
                             _associarEmpUf.Adicionar(associar);
                             contSalvos++; //conta a quantidade de registros salvos
-
                         }
-                        catch (Exception e)
+                        catch
                         {
-                            TempData["Error"] = "Probelmas ao salvar o registro, tente novamente";
+                            TempData["Error"] = "Problemas ao salvar o registro, tente novamente";
                             return RedirectToAction("Index");
                         }
-
                     }
-
-                   
                 }
-                if(contSalvos>0)
+                if (contSalvos > 0)
                 {
-                    TempData["Success"] = "Registros ASSOCIADOS com sucesso: Qtd: "+contSalvos;
+                    TempData["Success"] = "Registros ASSOCIADOS com sucesso: Qtd: " + contSalvos;
                     return RedirectToAction("Index");
                 }
                 else
@@ -116,10 +110,6 @@ namespace PrecisoPRO.Controllers
                     TempData["Warning"] = "Nenhum registro ASSOCIADO";
                     return RedirectToAction("Index");
                 }
-                
-
-
-
             }
             else
             {

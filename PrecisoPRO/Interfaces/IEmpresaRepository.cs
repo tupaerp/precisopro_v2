@@ -14,8 +14,6 @@ namespace PrecisoPRO.Interfaces
         Task<IEnumerable<Empresa>> GetAllAsyncNoTracking();
 
         bool Adicionar(Empresa empresa);
-
-
         bool Update(Empresa empresa);
 
         bool Delete(Empresa empresa);
