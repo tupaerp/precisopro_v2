@@ -24,6 +24,15 @@ function limparInputs() {
     document.getElementById('estado').value = valor;
 }
 
+$(document).ready(function (){
+
+    $('#btn-detalhes').click(function () {
+        $('#modalEmpresaDetalhes').modal();
+    });
+
+}
+
+
 //mascaras
 //mascaras
 $(document).ready(function () {
@@ -59,6 +68,21 @@ function chamarIncluir() {
   
 
     $("#modal").load("/" + controller + "/Incluir/", function () {
+
+        $('#modal').modal("show");
+
+    });
+}
+
+function chamarDetalhes() {
+
+    var cont = document.querySelector(".pro-titulo"); //pega o titulo
+
+    var controller = cont.innerText;
+
+
+
+    $("#modal").load("/" + controller + "/Detalhes/", function () {
 
         $('#modal').modal("show");
 

@@ -3,6 +3,7 @@ using PrecisoPRO.Filters;
 using PrecisoPRO.Interfaces;
 using PrecisoPRO.Models;
 using PrecisoPRO.Models.ViewModels;
+using PrecisoPRO.Repository;
 using System.Data;
 using X.PagedList;
 
@@ -123,6 +124,12 @@ namespace PrecisoPRO.Controllers
             //Busca os Estados
             ViewBag.Estados = this.listaEstados.ToList();
             return View(empresaVM);
+        }
+
+        public async Task<IActionResult> Detalhes()
+        {
+            this.listaEmpresas = await _empresaRepository.GetAll();
+            return PartialView();
         }
     }
 }
